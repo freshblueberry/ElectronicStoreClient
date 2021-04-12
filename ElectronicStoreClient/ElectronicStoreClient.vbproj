@@ -95,6 +95,7 @@
     <Content Include="Category.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Login-Register.aspx" />
+    <Content Include="MyAccount.aspx" />
     <Content Include="ProductDetail.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -145,6 +146,13 @@
     <Compile Include="Layout.Master.vb">
       <DependentUpon>Layout.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyAccount.aspx.designer.vb">
+      <DependentUpon>MyAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyAccount.aspx.vb">
+      <DependentUpon>MyAccount.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="ProductDetail.aspx.designer.vb">
       <DependentUpon>ProductDetail.aspx</DependentUpon>
