@@ -94,7 +94,7 @@
   <ItemGroup>
     <Content Include="Category.aspx" />
     <Content Include="Default.aspx" />
-    <Content Include="Login.aspx" />
+    <Content Include="Login-Register.aspx" />
     <Content Include="ProductDetail.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -113,11 +113,11 @@
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="Login.aspx.designer.vb">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="Login-Register.aspx.designer.vb">
+      <DependentUpon>Login-Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Login.aspx.vb">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="Login-Register.aspx.vb">
+      <DependentUpon>Login-Register.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
