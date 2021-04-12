@@ -32,6 +32,60 @@ Partial Public Class Site1
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
+    '''HyperLink1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents HyperLink1 As Global.System.Web.UI.WebControls.HyperLink
+
+    '''<summary>
+    '''tbSearch control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents tbSearch As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''btnSearch control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnSearch As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''hlLogin control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents hlLogin As Global.System.Web.UI.WebControls.HyperLink
+
+    '''<summary>
+    '''hlLogout control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents hlLogout As Global.System.Web.UI.WebControls.HyperLink
+
+    '''<summary>
+    '''lblCustomer control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblCustomer As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''ContentPlaceHolder1 control.
     '''</summary>
     '''<remarks>
