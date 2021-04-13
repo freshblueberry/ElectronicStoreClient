@@ -74,17 +74,17 @@
                                 <div class="header-action header-action-flex">
                                     <div class="same-style-2 same-style-2-white same-style-2-font-inc">
                                         
-                                        <asp:HyperLink ID="hlLogin" runat="server" NavigateUrl="Login.aspx">
+                                        <asp:HyperLink ID="hlLogin" runat="server" NavigateUrl="Login-Register.aspx">  <!--Edited by Cliff -->
                                             <i class="icon-user"></i>
                                         </asp:HyperLink>
-                                        <asp:HyperLink ID="hlLogout" runat="server" NavigateUrl="Logout.aspx" Visible="false">
+                                        <asp:HyperLink ID="hlLogout" runat="server" NavigateUrl="Login-Register.aspx" Visible="false"> <!--Edited by Cliff; note: Login-Logout methods should be placed in this page. im guessing -->
                                             <i class="icon-user"></i>
-                                        </asp:HyperLink>
-                                        <span><asp:Label ID="lblCustomer" runat="server" Text="" Visible="false"></asp:Label></span>
+                                        </asp:HyperLink >
+                                        <span><asp:Label ID="lblCustomer" runat="server" NavigateUrl="MyAccount.aspx" Text="" Visible="false"></asp:Label></span>
                                     </div>
 
                                     <div class="same-style-2 same-style-2-white same-style-2-font-inc header-cart">
-                                        <a class="cart" href="ViewCart.aspx">
+                                        <a class="cart" href="Cart.aspx">
                                             <i class="icon-basket-loaded"></i>
                                         </a>
                                     </div>
@@ -100,7 +100,7 @@
                                 <div class="main-menu main-menu-white main-menu-font-size-14 main-menu-padding-3 main-menu-lh-5">
                                     <nav>
                                         <ul>
-                                            <li><a href="index.html">CATEGORIES<i class="icon-arrow-down"></i></a>
+                                            <li><a href="Category.aspx">CATEGORIES<i class="icon-arrow-down"></i></a> 
                                                 <ul class="sub-menu-style">
 <%--                                                    <asp:SqlDataSource ID="SqlDSMainCategory" ConnectionString="<%$ ConnectionStrings:ConnectionStringOnlineStore %>" SelectCommand="SELECT * FROM [Category] WHERE parent = 0" runat="server"></asp:SqlDataSource>
                                                     <asp:Repeater ID="rpMainCategory" runat="server" DataSourceID="SqlDSMainCategory">
