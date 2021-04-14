@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Layout.Master" CodeBehind="Category.aspx.vb" Inherits="ElectronicStoreClient.Category" %>
+﻿<%@ Page Async="true" Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Layout.Master" CodeBehind="Category.aspx.vb" Inherits="ElectronicStoreClient.Category" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -56,7 +56,65 @@
 				                        <ItemTemplate>--%>
 
 
+                                        <!--Added by Clifford (Begin)-->
+                                        <asp:Repeater ID="gvAllProducts" runat="server">
+                                             <ItemTemplate>
+                                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                                                    <div class="single-product-wrap mb-35">
+                                                        <div class="product-img product-img-zoom mb-15">
+                                                            <a href="ProductDetail.aspx">
+                                                                <img src="assets/images/product/product-13.jpg" alt="">
+                                                            </a>
+                                                            &nbsp;&nbsp;<div class="product-action-2 tooltip-style-2">
+                                                                <button title="Wishlist"><i class="icon-heart"></i></button>
+                                                                <button title="Quick View" data-toggle="modal" data-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                                                <button title="Compare"><i class="icon-refresh"></i></button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-content-wrap-2 text-center">
+                                                            <div class="product-rating-wrap">
+                                                                <div class="product-rating">
+                                                                    <i class="icon_star"></i>
+                                                                    <i class="icon_star"></i>
+                                                                    <i class="icon_star"></i>
+                                                                    <i class="icon_star"></i>
+                                                                    <i class="icon_star gray"></i>
+                                                                </div>
+                                                                <span>(2)</span>
+                                                            </div>
+                                                            <h3><a href="ProductDetail.aspx"><%#: Eval("ProductName") %></a></h3>
+                                                            <div class="product-price-2">
+                                                                <span> <%#: Eval("Price") %></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-content-wrap-2 product-content-position text-center">
+                                                            <div class="product-rating-wrap">
+                                                                <div class="product-rating">
+                                                                    <i class="icon_star"></i>
+                                                                    <i class="icon_star"></i>
+                                                                    <i class="icon_star"></i>
+                                                                    <i class="icon_star"></i>
+                                                                    <i class="icon_star gray"></i>
+                                                                </div>
+                                                                <span>(2)</span>
+                                                            </div>
+                                                            <h3><a href="ProductDetail.aspx"><%#: Eval("ProductName") %></a></h3>
+                                                            <div class="product-price-2">
+                                                                <span><%#: Eval("Price") %></span>
+                                                            </div>
+                                                            <div class="pro-add-to-cart">
+                                                                <button title="Add to Cart">Add To Cart</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </ItemTemplate>
+                                        </asp:Repeater>
+                                        <!--Added by Clifford (End)-->
 
+
+
+                                         <!--Note: If this layout is good, then remove or comment out the old HTML. -CC-->
                                         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
                                             <div class="single-product-wrap mb-35">
                                                 <div class="product-img product-img-zoom mb-15">
@@ -77,8 +135,8 @@
                                                 </div>
                                                 <div class="product-content-wrap-2 product-content-position text-center">
                                                     <h3>
-                                                        <a href="ProductDetail.aspx?ProductID=<%# Eval("ProductID")%>">
-                                                        <%# Trim(Eval("ProductName"))%>
+<%--                                                          <a href="ProductDetail.aspx?ProductID=<%# Eval("ProductID")%>">
+                                                        <%# Trim(Eval("ProductName"))%>  --%>
                                                         </a>
                                                     </h3>
                                                     <div class="product-price-2">
