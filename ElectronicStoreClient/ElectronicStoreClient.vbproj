@@ -92,6 +92,7 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ApiClient.aspx" />
     <Content Include="Cart.aspx" />
     <Content Include="Category.aspx" />
     <Content Include="Default.aspx" />
@@ -101,6 +102,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiClient.aspx.designer.vb">
+      <DependentUpon>ApiClient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ApiClient.aspx.vb">
+      <DependentUpon>ApiClient.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Cart.aspx.designer.vb">
       <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
@@ -122,6 +130,8 @@
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="HttpClient.vb" />
+    <Compile Include="HttpMethod.vb" />
     <Compile Include="Login-Register.aspx.designer.vb">
       <DependentUpon>Login-Register.aspx</DependentUpon>
     </Compile>
