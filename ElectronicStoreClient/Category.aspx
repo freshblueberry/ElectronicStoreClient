@@ -84,7 +84,7 @@
                                                             </div>
                                                             <h3><a href="ProductDetail.aspx"><%#: Eval("ProductName") %></a></h3>
                                                             <div class="product-price-2">
-                                                                <span> <%#: Eval("Price") %></span>
+                                                                <span>$ <%#: Eval("Price") %></span>
                                                             </div>
                                                         </div>
                                                         <div class="product-content-wrap-2 product-content-position text-center">
@@ -100,7 +100,7 @@
                                                             </div>
                                                             <h3><a href="ProductDetail.aspx"><%#: Eval("ProductName") %></a></h3>
                                                             <div class="product-price-2">
-                                                                <span><%#: Eval("Price") %></span>
+                                                                <span> $ <%#: Eval("Price") %></span>
                                                             </div>
                                                             <div class="pro-add-to-cart">
                                                                 <button title="Add to Cart">Add To Cart</button>
