@@ -63,7 +63,8 @@
                                                     <div class="single-product-wrap mb-35">
                                                         <div class="product-img product-img-zoom mb-15">
                                                             <a href="ProductDetail.aspx">
-                                                                <img src="assets/images/product/product-13.jpg" alt="">
+                                                                <!-- added image source for products in category page -->
+                                                                <img src="images/<%# Trim(Eval("ProductNO"))%>.jpg" />
                                                             </a>
                                                             &nbsp;&nbsp;<div class="product-action-2 tooltip-style-2">
                                                                 <button title="Wishlist"><i class="icon-heart"></i></button>

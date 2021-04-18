@@ -46,6 +46,12 @@
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Configuration.ConfigurationBuilders.Base, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Configuration.ConfigurationBuilders.Base.2.0.0\lib\Net471\Microsoft.Configuration.ConfigurationBuilders.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Configuration.ConfigurationBuilders.UserSecrets, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.2.0.0\lib\Net471\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Desktop\2020 Spring\CIS 4290 - Project Development\Archive\WebAPI (Example)\Client Site Components\MyEcommerceSite\Bin\Newtonsoft.Json.dll</HintPath>
@@ -132,7 +138,6 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ApiClient.aspx" />
     <Content Include="Cart.aspx" />
     <Content Include="Category.aspx" />
     <Content Include="Default.aspx" />
@@ -142,13 +147,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApiClient.aspx.designer.vb">
-      <DependentUpon>ApiClient.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ApiClient.aspx.vb">
-      <DependentUpon>ApiClient.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
     <Compile Include="Cart.aspx.designer.vb">
       <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
@@ -170,8 +168,6 @@
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="HttpClient.vb" />
-    <Compile Include="HttpMethod.vb" />
     <Compile Include="Login-Register.aspx.designer.vb">
       <DependentUpon>Login-Register.aspx</DependentUpon>
     </Compile>
