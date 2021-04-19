@@ -140,6 +140,7 @@
   <ItemGroup>
     <Content Include="Cart.aspx" />
     <Content Include="Category.aspx" />
+    <Content Include="CONTACT.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Login-Register.aspx" />
     <Content Include="MyAccount.aspx" />
@@ -160,6 +161,13 @@
     <Compile Include="Category.aspx.vb">
       <DependentUpon>Category.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CONTACT.aspx.designer.vb">
+      <DependentUpon>CONTACT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CONTACT.aspx.vb">
+      <DependentUpon>CONTACT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.designer.vb">
       <DependentUpon>Default.aspx</DependentUpon>

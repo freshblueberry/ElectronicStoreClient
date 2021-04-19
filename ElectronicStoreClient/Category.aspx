@@ -1,8 +1,9 @@
 ﻿<%@ Page Async="true" Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Layout.Master" CodeBehind="Category.aspx.vb" Inherits="ElectronicStoreClient.Category" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <div class="main-wrapper">
+    <div class="main-wrapper">
         <div class="breadcrumb-area bg-gray">
             <div class="container">
                 <div class="breadcrumb-content text-center">
@@ -10,7 +11,8 @@
                         <li>
                             <a href="index.html">Shop</a>
                         </li>
-                        <li class="active"><asp:Label ID="lblMainCategoryName1" runat="server" Text=""></asp:Label></li>
+                        <li class="active">
+                            <asp:Label ID="lblMainCategoryName1" runat="server" Text=""></asp:Label></li>
                     </ul>
                 </div>
             </div>
@@ -25,23 +27,24 @@
                                     <a class="active" href="#shop-1" data-toggle="tab"><i class="icon-grid"></i></a>
                                     <a href="#shop-2" data-toggle="tab"><i class="icon-menu"></i></a>
                                 </div>
-                                <h2><asp:Label ID="lblProductList" runat="server" Text="Featured Products"></asp:Label></h2>
+                                <h2>
+                                    <asp:Label ID="lblProductList" runat="server" Text="Featured Products"></asp:Label></h2>
                             </div>
                             <div class="product-sorting-wrapper">
                                 <div class="product-shorting shorting-style">
                                     <label>View :</label>
                                     <select>
-                                        <option value=""> 20</option>
-                                        <option value=""> 23</option>
-                                        <option value=""> 30</option>
+                                        <option value="">20</option>
+                                        <option value="">23</option>
+                                        <option value="">30</option>
                                     </select>
                                 </div>
                                 <div class="product-show shorting-style">
                                     <label>Sort by :</label>
                                     <select>
                                         <option value="">Default</option>
-                                        <option value=""> Name</option>
-                                        <option value=""> price</option>
+                                        <option value="">Name</option>
+                                        <option value="">price</option>
                                     </select>
                                 </div>
                             </div>
@@ -51,14 +54,14 @@
                                 <div id="shop-1" class="tab-pane active">
 
                                     <div class="row">
-<%--			                        <asp:SqlDataSource ID="SqlDSProductList" ConnectionString="<%$ ConnectionStrings:ConnectionStringOnlineStore %>" SelectCommand="" runat="server"></asp:SqlDataSource>
+                                        <%--			                        <asp:SqlDataSource ID="SqlDSProductList" ConnectionString="<%$ ConnectionStrings:ConnectionStringOnlineStore %>" SelectCommand="" runat="server"></asp:SqlDataSource>
 			                        <asp:Repeater ID="rpProductList" runat="server" DataSourceID="SqlDSProductList">
 				                        <ItemTemplate>--%>
 
 
                                         <!--Added by Clifford (Begin)-->
                                         <asp:Repeater ID="gvAllProducts" runat="server">
-                                             <ItemTemplate>
+                                            <ItemTemplate>
                                                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
                                                     <div class="single-product-wrap mb-35">
                                                         <div class="product-img product-img-zoom mb-15">
@@ -101,7 +104,7 @@
                                                             </div>
                                                             <h3><a href="ProductDetail.aspx"><%#: Eval("ProductName") %></a></h3>
                                                             <div class="product-price-2">
-                                                                <span> $ <%#: Eval("Price") %></span>
+                                                                <span>$ <%#: Eval("Price") %></span>
                                                             </div>
                                                             <div class="pro-add-to-cart">
                                                                 <button title="Add to Cart">Add To Cart</button>
@@ -115,33 +118,33 @@
 
 
 
-                                         <!--Note: If this layout is good, then remove or comment out the old HTML. -CC-->
+                                        <!--Note: If this layout is good, then remove or comment out the old HTML. -CC-->
                                         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
                                             <div class="single-product-wrap mb-35">
                                                 <div class="product-img product-img-zoom mb-15">
-<%--                                                    <a href="ProductDetail.aspx?ProductID=<%# Eval("ProductID")%>">
+                                                    <%--                                                    <a href="ProductDetail.aspx?ProductID=<%# Eval("ProductID")%>">
                                                         <img img src="StoreAssets/images/<%# Trim(Eval("ProductNO"))%>.jpg" />
                                                     </a>--%>
                                                 </div>
                                                 <div class="product-content-wrap-2 text-center">
                                                     <h3>
-<%--                                                        <a href="ProductDetail.aspx?ProductID=<%# Eval("ProductID")%>"><%# Trim(Eval("ProductNo"))%>
+                                                        <%--                                                        <a href="ProductDetail.aspx?ProductID=<%# Eval("ProductID")%>"><%# Trim(Eval("ProductNo"))%>
                                                         <br />
                                                         <%# Trim(Eval("ProductName"))%>
                                                         </a>--%>
                                                     </h3>
                                                     <div class="product-price-2">
-<%--                                                        <span>$<%# GetWholesalePrice(Trim(Eval("UnitPrice"))) %></span>--%>
+                                                        <%--                                                        <span>$<%# GetWholesalePrice(Trim(Eval("UnitPrice"))) %></span>--%>
                                                     </div>
                                                 </div>
                                                 <div class="product-content-wrap-2 product-content-position text-center">
                                                     <h3>
-<%--                                                          <a href="ProductDetail.aspx?ProductID=<%# Eval("ProductID")%>">
+                                                        <%--                                                          <a href="ProductDetail.aspx?ProductID=<%# Eval("ProductID")%>">
                                                         <%# Trim(Eval("ProductName"))%>  --%>
                                                         </a>
                                                     </h3>
                                                     <div class="product-price-2">
-<%--                                                        <span>$<%# GetWholesalePrice(Trim(Eval("UnitPrice"))) %></span>--%>
+                                                        <%--                                                        <span>$<%# GetWholesalePrice(Trim(Eval("UnitPrice"))) %></span>--%>
                                                     </div>
                                                     <div class="pro-add-to-cart">
                                                         <button title="Add to Cart">Add To Cart</button>
@@ -153,20 +156,20 @@
 
 
 
-<%--                                        </ItemTemplate>
+                                        <%--                                        </ItemTemplate>
 			                            </asp:Repeater>--%>
                                     </div>
                                 </div>
                                 <div id="shop-2" class="tab-pane">
                                     <div class="shop-list-wrap mb-30">
-<%--                                    <asp:SqlDataSource ID="SqlDataSource1" ConnectionString="<%$ ConnectionStrings:ConnectionStringOnlineStore %>" SelectCommand="" runat="server"></asp:SqlDataSource>
+                                        <%--                                    <asp:SqlDataSource ID="SqlDataSource1" ConnectionString="<%$ ConnectionStrings:ConnectionStringOnlineStore %>" SelectCommand="" runat="server"></asp:SqlDataSource>
 			                        <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDSProductList">
 				                        <ItemTemplate>--%>
                                         <div class="row">
                                             <div class="col-xl-4 col-lg-5 col-md-6 col-sm-6">
                                                 <div class="product-list-img">
                                                     <a href="ProductDetail.aspx?ProductID=<%# Eval("ProductID")%>">
-<%--                                                        <asp:Image ID="imgProduct" runat="server" />--%>
+                                                        <%--                                                        <asp:Image ID="imgProduct" runat="server" />--%>
                                                     </a>
                                                     <div class="product-list-quickview">
                                                         <button title="Quick View" data-toggle="modal" data-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
@@ -177,19 +180,19 @@
                                             <div class="col-xl-8 col-lg-7 col-md-6 col-sm-6">
                                                 <div class="shop-list-content">
                                                     <h3>
-<%--                                                        <a href="ProductDetail.aspx?ProductID=<%# Eval("ProductID")%>"><%# Trim(Eval("ProductNo"))%>
+                                                        <%--                                                        <a href="ProductDetail.aspx?ProductID=<%# Eval("ProductID")%>"><%# Trim(Eval("ProductNo"))%>
                                                         <br />
                                                         <%# Trim(Eval("ProductName"))%>
                                                         </a>--%>
                                                     </h3>
                                                     <div class="product-price-1">
-<%--                                                        <span>$<%# GetWholesalePrice(Trim(Eval("UnitPrice"))) %></span>--%>
+                                                        <%--                                                        <span>$<%# GetWholesalePrice(Trim(Eval("UnitPrice"))) %></span>--%>
                                                     </div>
                                                     <p>Lorem ipsum dolor sit amet, consectetur adipic it, sed do eiusmod tempor labor incididunt ut et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
                                                 </div>
                                             </div>
                                         </div>
-<%--                                        </ItemTemplate>
+                                        <%--                                        </ItemTemplate>
 			                            </asp:Repeater>--%>
                                     </div>
                                 </div>
@@ -223,7 +226,7 @@
                                 </h4>
                                 <div class="shop-catigory">
                                     <ul>
-<%--                                        <asp:SqlDataSource ID="SqlDSSubCategory" ConnectionString="<%$ ConnectionStrings:ConnectionStringOnlineStore %>" SelectCommand="" runat="server"></asp:SqlDataSource>
+                                        <%--                                        <asp:SqlDataSource ID="SqlDSSubCategory" ConnectionString="<%$ ConnectionStrings:ConnectionStringOnlineStore %>" SelectCommand="" runat="server"></asp:SqlDataSource>
                                             <asp:Repeater ID="rpSubCategory" runat="server" DataSourceID="SqlDSSubCategory">
 	                                            <ItemTemplate>
 		                                            <li><a href="Category.aspx?SubCategoryId=<%# Eval("ID")%>&SubCategoryName=<%# Trim(Eval("CategoryName")) %>&MainCategoryID=<% = Request.QueryString("MainCategoryID")%>&MainCategoryName=<% = Request.QueryString("MainCategoryName")%>"><%# Trim(Eval("CategoryName"))%></a></li>
@@ -263,10 +266,14 @@
                                 </div>
                                 <div class="quickview-wrap mt-15">
                                     <div class="quickview-slide-active nav-style-6">
-                                        <a class="active" data-toggle="tab" href="#pro-1"><img src="assets/images/product/quickview-s1.jpg" alt=""></a>
-                                        <a data-toggle="tab" href="#pro-2"><img src="assets/images/product/quickview-s2.jpg" alt=""></a>
-                                        <a data-toggle="tab" href="#pro-3"><img src="assets/images/product/quickview-s3.jpg" alt=""></a>
-                                        <a data-toggle="tab" href="#pro-4"><img src="assets/images/product/quickview-s2.jpg" alt=""></a>
+                                        <a class="active" data-toggle="tab" href="#pro-1">
+                                            <img src="assets/images/product/quickview-s1.jpg" alt=""></a>
+                                        <a data-toggle="tab" href="#pro-2">
+                                            <img src="assets/images/product/quickview-s2.jpg" alt=""></a>
+                                        <a data-toggle="tab" href="#pro-3">
+                                            <img src="assets/images/product/quickview-s3.jpg" alt=""></a>
+                                        <a data-toggle="tab" href="#pro-4">
+                                            <img src="assets/images/product/quickview-s2.jpg" alt=""></a>
                                     </div>
                                 </div>
                             </div>
@@ -330,7 +337,7 @@
                                     <div class="product-details-meta">
                                         <ul>
                                             <li><span>Categories:</span> <a href="#">Woman,</a> <a href="#">Dress,</a> <a href="#">T-Shirt</a></li>
-                                            <li><span>Tag: </span> <a href="#">Fashion,</a> <a href="#">Mentone</a> , <a href="#">Texas</a></li>
+                                            <li><span>Tag: </span><a href="#">Fashion,</a> <a href="#">Mentone</a> , <a href="#">Texas</a></li>
                                         </ul>
                                     </div>
                                     <div class="pro-details-action-wrap">
