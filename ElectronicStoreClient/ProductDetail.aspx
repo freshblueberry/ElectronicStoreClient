@@ -33,11 +33,11 @@
                                 <div class="easyzoom-style">
                                     <div class="easyzoom easyzoom--overlay">
                                         <!-- Main Photo-->
-                                        <a href="assets/images/product-details/b-large-1.jpg">
-                                            <img src="assets/images/product-details/large-1.jpg" alt="">
+                                        <a href="images/shop/<%# Trim(Eval("ProductNO"))%>.jpg">
+                                             <img src="images/shop/<%# Trim(Eval("ProductNO"))%>.jpg" />
                                         </a>
                                     </div>
-                                    <a class="easyzoom-pop-up img-popup" href="assets/images/product-details/b-large-1.jpg"><i class="icon-size-fullscreen"></i></a>
+                                    <a class="easyzoom-pop-up img-popup" href="assets/images/shop/<%# Trim(Eval("ProductNO"))%>.jpg"><i class="icon-size-fullscreen"></i></a>
                                 </div>
                             </div>
                         </div>
