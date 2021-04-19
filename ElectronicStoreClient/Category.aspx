@@ -86,7 +86,7 @@
                                                                 </div>
                                                                 <span>(2)</span>
                                                             </div>
-                                                            <h3><a href="ProductDetail.aspx"><%#: Eval("ProductName") %></a></h3>
+                                                            <h3><a href="ProductDetail.aspx?ProductID=<%#Eval("ProductID")%>"><%#: Eval("ProductName") %></a></h3>
                                                             <div class="product-price-2">
                                                                 <span>$ <%#: Eval("Price") %></span>
                                                             </div>
@@ -102,7 +102,7 @@
                                                                 </div>
                                                                 <span>(2)</span>
                                                             </div>
-                                                            <h3><a href="ProductDetail.aspx"><%#: Eval("ProductName") %></a></h3>
+                                                            <h3><a href="ProductDetail.aspx?ProductID=<%#Eval("ProductID")%>"><%#: Eval("ProductName") %></a></h3>
                                                             <div class="product-price-2">
                                                                 <span>$ <%#: Eval("Price") %></span>
                                                             </div>
