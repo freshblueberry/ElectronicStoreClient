@@ -1,10 +1,12 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Layout.Master" CodeBehind="ProductDetail.aspx.vb" Inherits="ElectronicStoreClient.ProductDetail" %>
+﻿<%@ Page Async="true" Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Layout.Master" CodeBehind="ProductDetail.aspx.vb" Inherits="ElectronicStoreClient.ProductDetail" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <!-- Add content here -->
     <!-- May be missing JS; refer the product-details.html in theme folder -->
                   
+
+        <!-- Breadcrumb -->
         <div class="breadcrumb-area bg-gray">
             <div class="container">
                 <div class="breadcrumb-content text-center">
@@ -17,7 +19,12 @@
                 </div>
             </div>
         </div>
-        <div class="product-details-area pt-120 pb-115">
+        <!-- Breadcrumb End-->
+
+        <!-- Product Details Container -->
+        <asp:Repeater ID="gvProduct" runat="server">
+            <ItemTemplate>
+                <div class="product-details-area pt-120 pb-115">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
@@ -25,67 +32,23 @@
                             <div class="pro-dec-big-img-slider">
                                 <div class="easyzoom-style">
                                     <div class="easyzoom easyzoom--overlay">
+                                        <!-- Main Photo-->
                                         <a href="assets/images/product-details/b-large-1.jpg">
                                             <img src="assets/images/product-details/large-1.jpg" alt="">
                                         </a>
                                     </div>
                                     <a class="easyzoom-pop-up img-popup" href="assets/images/product-details/b-large-1.jpg"><i class="icon-size-fullscreen"></i></a>
                                 </div>
-                                <div class="easyzoom-style">
-                                    <div class="easyzoom easyzoom--overlay">
-                                        <a href="assets/images/product-details/b-large-2.jpg">
-                                            <img src="assets/images/product-details/large-2.jpg" alt="">
-                                        </a>
-                                    </div>
-                                    <a class="easyzoom-pop-up img-popup" href="assets/images/product-details/b-large-2.jpg"><i class="icon-size-fullscreen"></i></a>
-                                </div>
-                                <div class="easyzoom-style">
-                                    <div class="easyzoom easyzoom--overlay">
-                                        <a href="assets/images/product-details/b-large-3.jpg">
-                                            <img src="assets/images/product-details/large-3.jpg" alt="">
-                                        </a>
-                                    </div>
-                                    <a class="easyzoom-pop-up img-popup" href="assets/images/product-details/b-large-3.jpg"><i class="icon-size-fullscreen"></i></a>
-                                </div>
-                                <div class="easyzoom-style">
-                                    <div class="easyzoom easyzoom--overlay">
-                                        <a href="assets/images/product-details/b-large-4.jpg">
-                                            <img src="assets/images/product-details/large-4.jpg" alt="">
-                                        </a>
-                                    </div>
-                                    <a class="easyzoom-pop-up img-popup" href="assets/images/product-details/b-large-4.jpg"><i class="icon-size-fullscreen"></i></a>
-                                </div>
-                                <div class="easyzoom-style">
-                                    <div class="easyzoom easyzoom--overlay">
-                                        <a href="assets/images/product-details/b-large-2.jpg">
-                                            <img src="assets/images/product-details/large-2.jpg" alt="">
-                                        </a>
-                                    </div>
-                                    <a class="easyzoom-pop-up img-popup" href="assets/images/product-details/b-large-2.jpg"><i class="icon-size-fullscreen"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-dec-slider-small product-dec-small-style1">
-                                <div class="product-dec-small active">
-                                    <img src="assets/images/product-details/small-1.jpg" alt="">
-                                </div>
-                                <div class="product-dec-small">
-                                    <img src="assets/images/product-details/small-2.jpg" alt="">
-                                </div>
-                                <div class="product-dec-small">
-                                    <img src="assets/images/product-details/small-3.jpg" alt="">
-                                </div>
-                                <div class="product-dec-small">
-                                    <img src="assets/images/product-details/small-4.jpg" alt="">
-                                </div>
-                                <div class="product-dec-small">
-                                    <img src="assets/images/product-details/small-2.jpg" alt="">
-                                </div>
                             </div>
                         </div>
                     </div>
+
+                        <!-- Main Content-->
                     <div class="col-lg-6 col-md-6">
                         <div class="product-details-content pro-details-content-mrg">
-                            <h2>Simple Black T-Shirt</h2>
+                            <h2><%#: Eval("ProductName") %></h2>     <!-- Title-->
+
+                             <!-- Review -->
                             <div class="product-ratting-review-wrap">
                                 <div class="product-ratting-digit-wrap">
                                     <div class="product-ratting">
@@ -104,62 +67,30 @@
                                     <span>242 orders</span>
                                 </div>
                             </div>
-                            <p>Seamlessly predominate enterprise metrics without performance based process improvements.</p>
-                            <div class="pro-details-price">
-                                <span class="new-price">$75.72</span>
+                             <!-- Review End -->
+
+                             <!-- Price -->
+                            <div class="pro-details-price"> 
+                                <span class="new-price">$ <%#: Eval("Price") %></span>
                                 <span class="old-price">$95.72</span>
                             </div>
-                            <div class="pro-details-color-wrap">
-                                <span>Color:</span>
-                                <div class="pro-details-color-content">
-                                    <ul>
-                                        <li><a class="dolly" href="#">dolly</a></li>
-                                        <li><a class="white" href="#">white</a></li>
-                                        <li><a class="azalea" href="#">azalea</a></li>
-                                        <li><a class="peach-orange" href="#">Orange</a></li>
-                                        <li><a class="mona-lisa active" href="#">lisa</a></li>
-                                        <li><a class="cupid" href="#">cupid</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="pro-details-size">
-                                <span>Size:</span>
-                                <div class="pro-details-size-content">
-                                    <ul>
-                                        <li><a href="#">XS</a></li>
-                                        <li><a href="#">S</a></li>
-                                        <li><a href="#">M</a></li>
-                                        <li><a href="#">L</a></li>
-                                        <li><a href="#">XL</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <br />
+                            <!-- Price End -->
+                           
+                             <!-- Quantity -->
                             <div class="pro-details-quality">
                                 <span>Quantity:</span>
                                 <div class="cart-plus-minus">
                                     <input class="cart-plus-minus-box" type="text" name="qtybutton" value="1">
                                 </div>
                             </div>
-                            <div class="product-details-meta">
-                                <ul>
-                                    <li><span>Categories:</span> <a href="#">Woman,</a> <a href="#">Dress,</a> <a href="#">T-Shirt</a></li>
-                                    <li><span>Tag: </span> <a href="#">Fashion,</a> <a href="#">Mentone</a> , <a href="#">Texas</a></li>
-                                </ul>
-                            </div>
+                            <br />
+                             <!-- Quantity End -->
+
+                             <!-- Add To Cart-->
                             <div class="pro-details-action-wrap">
                                 <div class="pro-details-add-to-cart">
                                     <a title="Add to Cart" href="#">Add To Cart </a>
-                                </div>
-                                <div class="pro-details-action">
-                                    <a title="Add to Wishlist" href="#"><i class="icon-heart"></i></a>
-                                    <a title="Add to Compare" href="#"><i class="icon-refresh"></i></a>
-                                    <a class="social" title="Social" href="#"><i class="icon-share"></i></a>
-                                    <div class="product-dec-social">
-                                        <a class="facebook" title="Facebook" href="#"><i class="icon-social-facebook"></i></a>
-                                        <a class="twitter" title="Twitter" href="#"><i class="icon-social-twitter"></i></a>
-                                        <a class="instagram" title="Instagram" href="#"><i class="icon-social-instagram"></i></a>
-                                        <a class="pinterest" title="Pinterest" href="#"><i class="icon-social-pinterest"></i></a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -167,79 +98,27 @@
                 </div>
             </div>
         </div>
-        <div class="description-review-wrapper pb-110">
+        <!-- Product Details Container End -->
+
+        <!-- Details Wrapper -->
+                <div class="description-review-wrapper pb-110">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="dec-review-topbar nav mb-45">
                             <a class="active" data-toggle="tab" href="#des-details1">Description</a>
-                            <a data-toggle="tab" href="#des-details2">Specification</a>
-                            <a data-toggle="tab" href="#des-details3">Meterials </a>
                             <a data-toggle="tab" href="#des-details4">Reviews and Ratting </a>
                         </div>
                         <div class="tab-content dec-review-bottom">
+                            <!-- Item Description -->
                             <div id="des-details1" class="tab-pane active">
                                 <div class="description-wrap">
-                                    <p>Crafted in premium watch quality, fenix Chronos is the first Garmin timepiece to combine a durable metal case with integrated performance GPS to support navigation and sport. In the tradition of classic tool watches it features a tough design and a set of modern meaningful tools.</p>
-                                    <p> advanced performance metrics for endurance sports, Garmin quality navigation features and smart notifications. In fenix Chronos top-tier performance meets sophisticated design in a highly evolved timepiece that fits your style anywhere, anytime. Solid brushed 316L stainless steel case with brushed stainless steel bezel and integrated EXOTM antenna for GPS + GLONASS support. High-strength scratch resistant sapphire crystal. Brown vintage leather strap with hand-sewn contrast stitching and nubuck inner lining and quick release mechanism.</p>
+                                     <p><%#: Eval("ProductDescription") %></p>
                                 </div>
                             </div>
-                            <div id="des-details2" class="tab-pane">
-                                <div class="specification-wrap table-responsive">
-                                    <table>
-                                        <tbody>
-                                            <tr>
-                                                <td class="title width1">Name</td>
-                                                <td>Salwar Kameez</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="title width1">SKU</td>
-                                                <td>0x48e2c</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="title width1">Models</td>
-                                                <td>FX 829 v1</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="title width1">Categories</td>
-                                                <td>Digital Print</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="title width1">Size</td>
-                                                <td>60’’ x 40’’</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="title width1">Brand </td>
-                                                <td>Individual Collections</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="title width1">Color</td>
-                                                <td>Black, White</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div id="des-details3" class="tab-pane">
-                                <div class="specification-wrap table-responsive">
-                                    <table>
-                                        <tbody>
-                                            <tr>
-                                                <td class="title width1">Top</td>
-                                                <td>Cotton Digital Print Chain Stitch Embroidery Work</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="title width1">Bottom</td>
-                                                <td>Cotton Cambric</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="title width1">Dupatta</td>
-                                                <td>Digital Printed Cotton Malmal With Chain Stitch</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                            <!-- Description END -->
+
+                            <!-- Item Review -->
                             <div id="des-details4" class="tab-pane">
                                 <div class="review-wrapper">
                                     <h2>1 review for Sleeve Button Cowl Neck</h2>
@@ -328,9 +207,15 @@
 
                                 </div>
                                 </div>
+                            <!-- Item Review End -->
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        <!-- Description Wrapper End -->
+
+            </ItemTemplate>
+        </asp:Repeater>
 </asp:Content>

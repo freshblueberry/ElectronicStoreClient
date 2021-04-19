@@ -65,7 +65,7 @@
                                                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
                                                     <div class="single-product-wrap mb-35">
                                                         <div class="product-img product-img-zoom mb-15">
-                                                            <a href="ProductDetail.aspx">
+                                                            <a href="ProductDetail.aspx?ProductID=<%#Eval("ProductID")%>">
                                                                 <!-- added image source for products in category page -->
                                                                 <img src="images/<%# Trim(Eval("ProductNO"))%>.jpg" />
                                                             </a>

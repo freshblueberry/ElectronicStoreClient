@@ -10,11 +10,11 @@ Public Class Category
 
     Dim httpClient As New HttpClient
     Dim strCartID As String
-
+    Dim url As String = "http://localhost:44338/api/product"
 
     Protected Async Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Dim uri As String = "http://localhost:44338/api/product"
-        Dim task = Await httpClient.GetAsync(uri)
+
+        Dim task = Await httpClient.GetAsync(url)
         Dim jsonString = Await task.Content.ReadAsStringAsync()
         If task.IsSuccessStatusCode Then
             Dim table As DataTable = JsonConvert.DeserializeObject(Of DataTable)(jsonString)
