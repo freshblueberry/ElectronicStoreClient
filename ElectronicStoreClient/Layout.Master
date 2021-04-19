@@ -57,7 +57,7 @@
                                 <div class="categori-search-wrap categori-search-wrap-modify-2">
                                     <div class="categori-style-1">
                                         <select class="nice-select nice-select-style-1">
-                                            <option>All Categories </option>
+                                            <h1>All Categories </h1>
                                             <option>Motherboards </option>
                                             <option>Monitors</option>
                                             <option>GPU</option>
