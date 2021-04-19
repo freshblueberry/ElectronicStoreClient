@@ -67,7 +67,7 @@
                                                         <div class="product-img product-img-zoom mb-15">
                                                             <a href="ProductDetail.aspx?ProductID=<%#Eval("ProductID")%>">
                                                                 <!-- added image source for products in category page -->
-                                                                <img src="images/<%# Trim(Eval("ProductNO"))%>.jpg" />
+                                                                <img src="images/shop/<%# Trim(Eval("ProductNO"))%>.jpg" />
                                                             </a>
                                                             &nbsp;&nbsp;<div class="product-action-2 tooltip-style-2">
                                                                 <button title="Wishlist"><i class="icon-heart"></i></button>
