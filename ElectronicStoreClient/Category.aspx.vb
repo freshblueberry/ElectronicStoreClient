@@ -13,7 +13,7 @@ Public Class Category
 
 
     Protected Async Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Dim uri As String = "https://localhost:44338/api/product"
+        Dim uri As String = "https://localhost:44308/api/product"
         Dim task = Await httpClient.GetAsync(uri)
         Dim jsonString = Await task.Content.ReadAsStringAsync()
         If task.IsSuccessStatusCode Then
