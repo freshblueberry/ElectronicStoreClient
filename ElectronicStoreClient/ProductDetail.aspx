@@ -90,7 +90,10 @@
                              <!-- Add To Cart-->
                             <div class="pro-details-action-wrap">
                                 <div class="pro-details-add-to-cart">
-                                    <a title="Add to Cart" href="#">Add To Cart </a>
+                                    <form>
+                                          <asp:Button ID ="btnAddtoCart" runat="server" Text="Add" onCLick="btnAddtoCart_Click"/>
+                                    </form>
+                                    
                                 </div>
                             </div>
                         </div>

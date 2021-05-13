@@ -4,6 +4,7 @@ Imports System.Drawing
 Imports System.Net.Http
 Imports System.Net.Http.Headers
 Imports Newtonsoft.Json
+Imports System.Configuration
 
 Public Class ProductDetail
     Inherits System.Web.UI.Page
@@ -25,5 +26,37 @@ Public Class ProductDetail
         End If
 
     End Sub
+
+    Public Sub btnAddtoCart_Click(sender As Object, e As EventArgs)
+        Response.Redirect("Cart.aspx")
+        '*** get CartNo
+        Dim strCartNo As String
+        If HttpContext.Current.Request.Cookies("CartNo") Is Nothing Then
+            strCartNo = GetRandomCartNoUsingGUID(10)
+            Dim CookieTo As New HttpCookie("CartNo", strCartNo)
+            HttpContext.Current.Response.AppendCookie(CookieTo)
+        Else
+            Dim CookieBack As HttpCookie
+            CookieBack = HttpContext.Current.Request.Cookies("CartNo")
+            strCartNo = CookieBack.Value
+        End If
+
+
+    End Sub
+
+
+
+    Public Function GetRandomCartNoUsingGUID(ByVal length As Integer) As String
+        'Get the GUID
+        Dim guidResult As String = System.Guid.NewGuid().ToString()
+        'Remove the hyphens
+        guidResult = guidResult.Replace("-", String.Empty)
+        'Make sure length is valid
+        If length <= 0 OrElse length > guidResult.Length Then
+            Throw New ArgumentException("Length must be between 1 and " & guidResult.Length)
+        End If
+        'Return the first length bytes
+        Return guidResult.Substring(0, length)
+    End Function
 
 End Class
