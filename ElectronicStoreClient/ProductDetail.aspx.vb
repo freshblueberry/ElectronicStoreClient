@@ -10,7 +10,7 @@ Public Class ProductDetail
 
     Dim httpClient As New HttpClient
     Dim strCartID As String
-    Dim url As String = "http://localhost:44338/api/product/"
+    Dim url As String = "https://localhost:44338/api/product/"
 
     Protected Async Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Request.QueryString("ProductID") <> "" Then
