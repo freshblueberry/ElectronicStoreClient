@@ -23,17 +23,17 @@ Partial Class ApiClient
 
     End Sub
 
-    Private Async Sub btnAllReviews_ClickAsync(sender As Object, e As EventArgs) Handles btnAllReviews.Click
-        Dim uri As String = "https://localhost:44338/api/review"
-        Dim task = Await httpClient.GetAsync(uri)
-        Dim jsonString = Await task.Content.ReadAsStringAsync()
-        If task.IsSuccessStatusCode Then
-            Dim table As DataTable = JsonConvert.DeserializeObject(Of DataTable)(jsonString)
-            gvAllReviews.DataSource = table
-            gvAllReviews.DataBind()
-        End If
+    'Private Async Sub btnAllReviews_ClickAsync(sender As Object, e As EventArgs) Handles btnAllReviews.Click
+    '    Dim uri As String = "https://localhost:44338/api/review"
+    '    Dim task = Await httpClient.GetAsync(uri)
+    '    Dim jsonString = Await task.Content.ReadAsStringAsync()
+    '    If task.IsSuccessStatusCode Then
+    '        Dim table As DataTable = JsonConvert.DeserializeObject(Of DataTable)(jsonString)
+    '        gvAllReviews.DataSource = table
+    '        gvAllReviews.DataBind()
+    '    End If
 
-    End Sub
+    'End Sub
 
     Public Async Sub btnProductID_ClickAsync(sender As Object, e As EventArgs) Handles btnProductID.Click
 
@@ -49,18 +49,18 @@ Partial Class ApiClient
     End Sub
 
 
-    Public Async Sub btnReviewID_ClickAsync(sender As Object, e As EventArgs) Handles btnReviewID.Click
+    'Public Async Sub btnReviewID_ClickAsync(sender As Object, e As EventArgs) Handles btnReviewID.Click
 
-        Dim uri As String = "http://localhost:44338/api/review/" & tbReviewID.Value
-        Dim task = Await httpClient.GetAsync(uri)
-        Dim jsonString As String = Await task.Content.ReadAsStringAsync()
-        If task.IsSuccessStatusCode Then
-            Dim table As DataTable = JsonConvert.DeserializeObject(Of DataTable)(jsonString)
-            gvReviewID.DataSource = table
-            gvReviewID.DataBind()
-        End If
+    '    Dim uri As String = "http://localhost:44338/api/review/" & tbReviewID.Value
+    '    Dim task = Await httpClient.GetAsync(uri)
+    '    Dim jsonString As String = Await task.Content.ReadAsStringAsync()
+    '    If task.IsSuccessStatusCode Then
+    '        Dim table As DataTable = JsonConvert.DeserializeObject(Of DataTable)(jsonString)
+    '        gvReviewID.DataSource = table
+    '        gvReviewID.DataBind()
+    '    End If
 
-    End Sub
+    'End Sub
 
     Private Async Sub btnCreateProduct_ClickAsync(sender As Object, e As EventArgs) Handles btnCreateProduct.Click
         Dim myJson As String = ("{'ProductNo': '" & tbProductNo.Value & "', 'ProductName': '" & tbProductName.Value & "', 'ProductDescription': '" _
@@ -73,15 +73,15 @@ Partial Class ApiClient
         btnAllProducts_ClickAsync(btnAllProducts, EventArgs.Empty)
     End Sub
 
-    Private Async Sub btnCreateReview_ClickAsync(sender As Object, e As EventArgs) Handles btnCreateReview.Click
-        Dim myJson As String = ("{'ProductID': '" & tbRProductId.Value & "', 'UserName': '" & tbUserName.Value & "', 'Rating': '" _
-            & tbRating.Value & "', 'UserReview': '" & tbUserReview.Value & "'}")
+    'Private Async Sub btnCreateReview_ClickAsync(sender As Object, e As EventArgs) Handles btnCreateReview.Click
+    '    Dim myJson As String = ("{'ProductID': '" & tbRProductId.Value & "', 'UserName': '" & tbUserName.Value & "', 'Rating': '" _
+    '        & tbRating.Value & "', 'UserReview': '" & tbUserReview.Value & "'}")
 
-        httpClient.DefaultRequestHeaders.Authorization = New AuthenticationHeaderValue("Bearer", getToken())
-        Dim uri As String = "http://localhost:44338/api/review/"
-        Dim response = Await httpClient.PostAsync(uri, New StringContent(myJson, Encoding.UTF8, "application/json"))
-        btnAllReviews_ClickAsync(btnAllReviews, EventArgs.Empty)
-    End Sub
+    '    httpClient.DefaultRequestHeaders.Authorization = New AuthenticationHeaderValue("Bearer", getToken())
+    '    Dim uri As String = "http://localhost:44338/api/review/"
+    '    Dim response = Await httpClient.PostAsync(uri, New StringContent(myJson, Encoding.UTF8, "application/json"))
+    '    btnAllReviews_ClickAsync(btnAllReviews, EventArgs.Empty)
+    'End Sub
 
     Private Async Sub btnUpdateProduct_ClickAsync(sender As Object, e As EventArgs) Handles btnUpdateProduct.Click
         Dim myJson As String = ("{'ProductNo': '" & tbProductNo.Value & "', 'ProductName': '" & tbProductName.Value & "', 'ProductDescription': '" _
@@ -95,16 +95,16 @@ Partial Class ApiClient
         btnProductID_ClickAsync(btnProductID, EventArgs.Empty)
     End Sub
 
-    Private Async Sub btnUpdateReview_ClickAsync(sender As Object, e As EventArgs) Handles btnUpdateReview.Click
-        Dim myJson As String = ("{'ProductID': '" & tbRProductId.Value & "', 'UserName': '" & tbUserName.Value & "', 'Rating': '" _
-            & tbRating.Value & "', 'UserReview': '" & tbUserReview.Value & "'}")
+    'Private Async Sub btnUpdateReview_ClickAsync(sender As Object, e As EventArgs) Handles btnUpdateReview.Click
+    '    Dim myJson As String = ("{'ProductID': '" & tbRProductId.Value & "', 'UserName': '" & tbUserName.Value & "', 'Rating': '" _
+    '        & tbRating.Value & "', 'UserReview': '" & tbUserReview.Value & "'}")
 
-        httpClient.DefaultRequestHeaders.Authorization = New AuthenticationHeaderValue("Bearer", getToken())
-        Dim uri As String = "http://localhost:44338/api/review/" & tbUpdateReviewID.Value
-        Dim response = Await httpClient.PutAsync(uri, New StringContent(myJson, Encoding.UTF8, "application/json"))
-        btnAllReviews_ClickAsync(btnAllReviews, EventArgs.Empty)
-        btnReviewID_ClickAsync(btnReviewID, EventArgs.Empty)
-    End Sub
+    '    httpClient.DefaultRequestHeaders.Authorization = New AuthenticationHeaderValue("Bearer", getToken())
+    '    Dim uri As String = "http://localhost:44338/api/review/" & tbUpdateReviewID.Value
+    '    Dim response = Await httpClient.PutAsync(uri, New StringContent(myJson, Encoding.UTF8, "application/json"))
+    '    btnAllReviews_ClickAsync(btnAllReviews, EventArgs.Empty)
+    '    btnReviewID_ClickAsync(btnReviewID, EventArgs.Empty)
+    'End Sub
 
     Private Async Sub btnDeleteProductID_ClickAsync(sender As Object, e As EventArgs) Handles btnDeleteProductID.Click
         httpClient.DefaultRequestHeaders.Authorization = New AuthenticationHeaderValue("Bearer", getToken())
@@ -115,183 +115,183 @@ Partial Class ApiClient
 
     End Sub
 
-    Private Async Sub btnDeleteReviewID_ClickAsync(sender As Object, e As EventArgs) Handles btnDeleteReviewID.Click
-        httpClient.DefaultRequestHeaders.Authorization = New AuthenticationHeaderValue("Bearer", getToken())
-        Dim uri As String = "http://localhost:44338/api/review/" & tbDeleteReviewID.Value
-        Await httpClient.DeleteAsync(uri)
-        btnAllReviews_ClickAsync(btnAllReviews, EventArgs.Empty)
-        btnReviewID_ClickAsync(btnReviewID, EventArgs.Empty)
+    'Private Async Sub btnDeleteReviewID_ClickAsync(sender As Object, e As EventArgs) Handles btnDeleteReviewID.Click
+    '    httpClient.DefaultRequestHeaders.Authorization = New AuthenticationHeaderValue("Bearer", getToken())
+    '    Dim uri As String = "http://localhost:44338/api/review/" & tbDeleteReviewID.Value
+    '    Await httpClient.DeleteAsync(uri)
+    '    btnAllReviews_ClickAsync(btnAllReviews, EventArgs.Empty)
+    '    btnReviewID_ClickAsync(btnReviewID, EventArgs.Empty)
 
-    End Sub
+    'End Sub
 
-    Private Async Sub btnAllCarts_ClickAsync(sender As Object, e As EventArgs) Handles btnAllCarts.Click
+    'Private Async Sub btnAllCarts_ClickAsync(sender As Object, e As EventArgs) Handles btnAllCarts.Click
 
-        Dim uri As String = "http://localhost:44338/api/cart"
-        Dim task = Await httpClient.GetAsync(uri)
-        Dim jsonString = Await task.Content.ReadAsStringAsync()
-        If task.IsSuccessStatusCode Then
-            Dim table As DataTable = JsonConvert.DeserializeObject(Of DataTable)(jsonString)
-            gvAllCarts.DataSource = table
-            gvAllCarts.DataBind()
-        End If
-    End Sub
+    '    Dim uri As String = "http://localhost:44338/api/cart"
+    '    Dim task = Await httpClient.GetAsync(uri)
+    '    Dim jsonString = Await task.Content.ReadAsStringAsync()
+    '    If task.IsSuccessStatusCode Then
+    '        Dim table As DataTable = JsonConvert.DeserializeObject(Of DataTable)(jsonString)
+    '        gvAllCarts.DataSource = table
+    '        gvAllCarts.DataBind()
+    '    End If
+    'End Sub
 
-    Private Async Sub btnDeleteCartLineID_ClickAsync(sender As Object, e As EventArgs) Handles btnDeleteCartLineID.Click
-        httpClient.DefaultRequestHeaders.Authorization = New AuthenticationHeaderValue("Bearer", getToken())
-        Dim uri As String = "http://localhost:44338/api/cart/" & tbDeleteCartLineID.Value
-        Await httpClient.DeleteAsync(uri)
-        btnAllCarts_ClickAsync(btnAllCarts, EventArgs.Empty)
-        btnCartByID_ClickAsync(btnCartByID, EventArgs.Empty)
+    'Private Async Sub btnDeleteCartLineID_ClickAsync(sender As Object, e As EventArgs) Handles btnDeleteCartLineID.Click
+    '    httpClient.DefaultRequestHeaders.Authorization = New AuthenticationHeaderValue("Bearer", getToken())
+    '    Dim uri As String = "http://localhost:44338/api/cart/" & tbDeleteCartLineID.Value
+    '    Await httpClient.DeleteAsync(uri)
+    '    btnAllCarts_ClickAsync(btnAllCarts, EventArgs.Empty)
+    '    btnCartByID_ClickAsync(btnCartByID, EventArgs.Empty)
 
-    End Sub
+    'End Sub
 
-    Private Async Sub btnCartByID_ClickAsync(sender As Object, e As EventArgs) Handles btnCartByID.Click
+    'Private Async Sub btnCartByID_ClickAsync(sender As Object, e As EventArgs) Handles btnCartByID.Click
 
-        Dim uri As String = "http://localhost:44338/api/cart/" & tbGetCartID.Value
-        Dim task = Await httpClient.GetAsync(uri)
-        Dim jsonString = Await task.Content.ReadAsStringAsync()
-        If task.IsSuccessStatusCode Then
-            Dim table As DataTable = JsonConvert.DeserializeObject(Of DataTable)(jsonString)
-            gvCartByID.DataSource = table
-            gvCartByID.DataBind()
-        End If
-    End Sub
+    '    Dim uri As String = "http://localhost:44338/api/cart/" & tbGetCartID.Value
+    '    Dim task = Await httpClient.GetAsync(uri)
+    '    Dim jsonString = Await task.Content.ReadAsStringAsync()
+    '    If task.IsSuccessStatusCode Then
+    '        Dim table As DataTable = JsonConvert.DeserializeObject(Of DataTable)(jsonString)
+    '        gvCartByID.DataSource = table
+    '        gvCartByID.DataBind()
+    '    End If
+    'End Sub
 
-    Private Async Sub btnCurrentCart_ClickAsync(sender As Object, e As EventArgs) Handles btnCurrentCart.Click
-        If strCartID IsNot Nothing Then
+    'Private Async Sub btnCurrentCart_ClickAsync(sender As Object, e As EventArgs) Handles btnCurrentCart.Click
+    '    If strCartID IsNot Nothing Then
 
-            Dim uri As String = "http://localhost:44338/api/cart/" & strCartID
-            Dim task = Await httpClient.GetAsync(uri)
-            Dim jsonString As String = Await task.Content.ReadAsStringAsync()
-            If task.IsSuccessStatusCode Then
-                Dim table As DataTable = JsonConvert.DeserializeObject(Of DataTable)(jsonString)
-                gvCurrentCart.DataSource = table
-                gvCurrentCart.DataBind()
-            End If
-        End If
-    End Sub
+    '        Dim uri As String = "http://localhost:44338/api/cart/" & strCartID
+    '        Dim task = Await httpClient.GetAsync(uri)
+    '        Dim jsonString As String = Await task.Content.ReadAsStringAsync()
+    '        If task.IsSuccessStatusCode Then
+    '            Dim table As DataTable = JsonConvert.DeserializeObject(Of DataTable)(jsonString)
+    '            gvCurrentCart.DataSource = table
+    '            gvCurrentCart.DataBind()
+    '        End If
+    '    End If
+    'End Sub
 
-    Private Sub ApiClient_Load(sender As Object, e As EventArgs) Handles Me.Load
-        If (HttpContext.Current.Request.Cookies("CartID") IsNot Nothing) Then
-            Dim CookieBack As HttpCookie = HttpContext.Current.Request.Cookies("CartID")
-            strCartID = CookieBack.Value
-        End If
-        If (HttpContext.Current.Request.Cookies("JwtCookie") IsNot Nothing) Then
-            loginDiv.Visible = False
-            btnApiLogout.Visible = True
-        End If
+    'Private Sub ApiClient_Load(sender As Object, e As EventArgs) Handles Me.Load
+    '    If (HttpContext.Current.Request.Cookies("CartID") IsNot Nothing) Then
+    '        Dim CookieBack As HttpCookie = HttpContext.Current.Request.Cookies("CartID")
+    '        strCartID = CookieBack.Value
+    '    End If
+    '    If (HttpContext.Current.Request.Cookies("JwtCookie") IsNot Nothing) Then
+    '        loginDiv.Visible = False
+    '        btnApiLogout.Visible = True
+    '    End If
 
-    End Sub
+    'End Sub
 
-    Private Async Sub btnUpdateCartQty_ClickAsync(sender As Object, e As EventArgs) Handles btnUpdateCartQty.Click
-        Dim myJson As String = ("[{'op': 'replace', 'path': '/quantity', 'value': '" & tbUpdateQtyAmt.Value & "'}]")
-        'Note [ ] in JSON'
+    'Private Async Sub btnUpdateCartQty_ClickAsync(sender As Object, e As EventArgs) Handles btnUpdateCartQty.Click
+    '    Dim myJson As String = ("[{'op': 'replace', 'path': '/quantity', 'value': '" & tbUpdateQtyAmt.Value & "'}]")
+    '    'Note [ ] in JSON'
 
-        httpClient.DefaultRequestHeaders.Authorization = New AuthenticationHeaderValue("Bearer", getToken())
-        Dim uri As String = "http://localhost:44338/api/cart/" & tbUpdateQtyCartLineID.Value
-        'HttpClient does not have a PatchAsync helper method but does support Patch HttpMethod so we build our own HttpRequestMethod and use SendAsync'
-        Dim httpPatchMethod As New HttpMethod("PATCH")
-        Dim request As New HttpRequestMessage(httpPatchMethod, uri)
-        request.Content = New StringContent(myJson, Encoding.UTF8, "application/json")
-        Dim response = Await httpClient.SendAsync(request)
+    '    httpClient.DefaultRequestHeaders.Authorization = New AuthenticationHeaderValue("Bearer", getToken())
+    '    Dim uri As String = "http://localhost:44338/api/cart/" & tbUpdateQtyCartLineID.Value
+    '    'HttpClient does not have a PatchAsync helper method but does support Patch HttpMethod so we build our own HttpRequestMethod and use SendAsync'
+    '    Dim httpPatchMethod As New HttpMethod("PATCH")
+    '    Dim request As New HttpRequestMessage(httpPatchMethod, uri)
+    '    request.Content = New StringContent(myJson, Encoding.UTF8, "application/json")
+    '    Dim response = Await httpClient.SendAsync(request)
 
-        btnAllCarts_ClickAsync(btnAllCarts, EventArgs.Empty)
-        btnCartByID_ClickAsync(btnCartByID, EventArgs.Empty)
-        btnCurrentCart_ClickAsync(btnCurrentCart, EventArgs.Empty)
+    '    btnAllCarts_ClickAsync(btnAllCarts, EventArgs.Empty)
+    '    btnCartByID_ClickAsync(btnCartByID, EventArgs.Empty)
+    '    btnCurrentCart_ClickAsync(btnCurrentCart, EventArgs.Empty)
 
-    End Sub
+    'End Sub
 
-    Private Async Sub btnImportAllProducts_ClickAsync(sender As Object, e As EventArgs) Handles btnImportAllProducts.Click
-        Dim uri As String = "http://localhost:44338/api/product"
-        Dim task = Await httpClient.GetAsync(uri)
-        Dim jsonString = Await task.Content.ReadAsStringAsync()
+    'Private Async Sub btnImportAllProducts_ClickAsync(sender As Object, e As EventArgs) Handles btnImportAllProducts.Click
+    '    Dim uri As String = "http://localhost:44338/api/product"
+    '    Dim task = Await httpClient.GetAsync(uri)
+    '    Dim jsonString = Await task.Content.ReadAsStringAsync()
 
-        Dim sqlDr As SqlDataReader
-        Dim strSQLStatement As String
-        Dim cmdSQL As SqlCommand
-        Dim strConnectionString As String = System.Configuration.ConfigurationManager.ConnectionStrings("ConnectionStringOnlineStore").ConnectionString
-        Dim conn As New SqlConnection(strConnectionString)
-        conn.Open()
-        strSQLStatement = "DECLARE @json NVARCHAR(max) SET @json = N'" & jsonString & "'; INSERT INTO Product  SELECT * FROM OPENJSON(@json) WITH (productNo varchar(30), productName varchar(100), productDescription varchar(200), price numeric(7,2), subCategoryID int, featured char(1), mainCategoryID int)"
-        cmdSQL = New SqlCommand(strSQLStatement, conn)
-        sqlDr = cmdSQL.ExecuteReader()
-        conn.Close()
-    End Sub
-    Private Async Sub btnImportAllReviews_ClickAsync(sender As Object, e As EventArgs) Handles btnImportAllReviews.Click
-        Dim uri As String = "http://localhost:44338/api/review"
-        Dim task = Await httpClient.GetAsync(uri)
-        Dim jsonString = Await task.Content.ReadAsStringAsync()
+    '    Dim sqlDr As SqlDataReader
+    '    Dim strSQLStatement As String
+    '    Dim cmdSQL As SqlCommand
+    '    Dim strConnectionString As String = System.Configuration.ConfigurationManager.ConnectionStrings("ConnectionStringOnlineStore").ConnectionString
+    '    Dim conn As New SqlConnection(strConnectionString)
+    '    conn.Open()
+    '    strSQLStatement = "DECLARE @json NVARCHAR(max) SET @json = N'" & jsonString & "'; INSERT INTO Product  SELECT * FROM OPENJSON(@json) WITH (productNo varchar(30), productName varchar(100), productDescription varchar(200), price numeric(7,2), subCategoryID int, featured char(1), mainCategoryID int)"
+    '    cmdSQL = New SqlCommand(strSQLStatement, conn)
+    '    sqlDr = cmdSQL.ExecuteReader()
+    '    conn.Close()
+    'End Sub
+    'Private Async Sub btnImportAllReviews_ClickAsync(sender As Object, e As EventArgs) Handles btnImportAllReviews.Click
+    '    Dim uri As String = "http://localhost:44338/api/review"
+    '    Dim task = Await httpClient.GetAsync(uri)
+    '    Dim jsonString = Await task.Content.ReadAsStringAsync()
 
-        Dim sqlDr As SqlDataReader
-        Dim strSQLStatement As String
-        Dim cmdSQL As SqlCommand
-        Dim strConnectionString As String = System.Configuration.ConfigurationManager.ConnectionStrings("ConnectionStringOnlineStore").ConnectionString
-        Dim conn As New SqlConnection(strConnectionString)
-        conn.Open()
-        strSQLStatement = "DECLARE @json NVARCHAR(max) SET @json = N'" & jsonString & "'; INSERT INTO Review  SELECT * FROM OPENJSON(@json) WITH (productID int, userName varchar(30), rating int, userReview varchar(300))"
-        cmdSQL = New SqlCommand(strSQLStatement, conn)
-        sqlDr = cmdSQL.ExecuteReader()
-        conn.Close()
-    End Sub
+    '    Dim sqlDr As SqlDataReader
+    '    Dim strSQLStatement As String
+    '    Dim cmdSQL As SqlCommand
+    '    Dim strConnectionString As String = System.Configuration.ConfigurationManager.ConnectionStrings("ConnectionStringOnlineStore").ConnectionString
+    '    Dim conn As New SqlConnection(strConnectionString)
+    '    conn.Open()
+    '    strSQLStatement = "DECLARE @json NVARCHAR(max) SET @json = N'" & jsonString & "'; INSERT INTO Review  SELECT * FROM OPENJSON(@json) WITH (productID int, userName varchar(30), rating int, userReview varchar(300))"
+    '    cmdSQL = New SqlCommand(strSQLStatement, conn)
+    '    sqlDr = cmdSQL.ExecuteReader()
+    '    conn.Close()
+    'End Sub
 
-    Private Async Sub btnImportProductID_ClickAsync(sender As Object, e As EventArgs) Handles btnImportProductID.Click
-        Dim uri As String = "http://localhost:44338/api/product/" & tbImportProductID.Value
-        Dim task = Await httpClient.GetAsync(uri)
-        Dim jsonString = Await task.Content.ReadAsStringAsync()
+    'Private Async Sub btnImportProductID_ClickAsync(sender As Object, e As EventArgs) Handles btnImportProductID.Click
+    '    Dim uri As String = "http://localhost:44338/api/product/" & tbImportProductID.Value
+    '    Dim task = Await httpClient.GetAsync(uri)
+    '    Dim jsonString = Await task.Content.ReadAsStringAsync()
 
 
-        Dim sqlDr As SqlDataReader
-        Dim strSQLStatement As String
-        Dim cmdSQL As SqlCommand
-        Dim strConnectionString As String = System.Configuration.ConfigurationManager.ConnectionStrings("ConnectionStringOnlineStore").ConnectionString
-        Dim conn As New SqlConnection(strConnectionString)
-        conn.Open()
-        strSQLStatement = "DECLARE @json NVARCHAR(max) SET @json = N'" & jsonString & "'; INSERT INTO Product  SELECT * FROM OPENJSON(@json) WITH (productNo varchar(30), productName varchar(100), productDescription varchar(200), price numeric(7,2), subCategoryID int, featured char(1), mainCategoryID int)"
-        cmdSQL = New SqlCommand(strSQLStatement, conn)
-        sqlDr = cmdSQL.ExecuteReader()
-        conn.Close()
-    End Sub
+    '    Dim sqlDr As SqlDataReader
+    '    Dim strSQLStatement As String
+    '    Dim cmdSQL As SqlCommand
+    '    Dim strConnectionString As String = System.Configuration.ConfigurationManager.ConnectionStrings("ConnectionStringOnlineStore").ConnectionString
+    '    Dim conn As New SqlConnection(strConnectionString)
+    '    conn.Open()
+    '    strSQLStatement = "DECLARE @json NVARCHAR(max) SET @json = N'" & jsonString & "'; INSERT INTO Product  SELECT * FROM OPENJSON(@json) WITH (productNo varchar(30), productName varchar(100), productDescription varchar(200), price numeric(7,2), subCategoryID int, featured char(1), mainCategoryID int)"
+    '    cmdSQL = New SqlCommand(strSQLStatement, conn)
+    '    sqlDr = cmdSQL.ExecuteReader()
+    '    conn.Close()
+    'End Sub
 
-    Private Async Sub btnApiLogin_ClickAsync(sender As Object, e As EventArgs) Handles btnApiLogin.Click
-        Dim myJson As String
-        myJson = ("{'email': '" & tbEmail.Value & "', 'password': '" & tbPassword.Value & "'}")
+    'Private Async Sub btnApiLogin_ClickAsync(sender As Object, e As EventArgs) Handles btnApiLogin.Click
+    '    Dim myJson As String
+    '    myJson = ("{'email': '" & tbEmail.Value & "', 'password': '" & tbPassword.Value & "'}")
 
-        Dim uri As String = "http://localhost:44338/account/login"
-        Dim task = Await httpClient.PostAsync(uri, New StringContent(myJson, Encoding.UTF8, "application/json"))
-        Dim jwtToken As String
-        If task.IsSuccessStatusCode Then
-            jwtToken = Await task.Content.ReadAsStringAsync()
-            lblLoginResult.Text = "Successful Login"
-            lblLoginResult.ForeColor = Color.Green
-            lblLoginResult.Visible = True
-            loginDiv.Visible = False
-            btnApiLogout.Visible = True
+    '    Dim uri As String = "http://localhost:44338/account/login"
+    '    Dim task = Await httpClient.PostAsync(uri, New StringContent(myJson, Encoding.UTF8, "application/json"))
+    '    Dim jwtToken As String
+    '    If task.IsSuccessStatusCode Then
+    '        jwtToken = Await task.Content.ReadAsStringAsync()
+    '        lblLoginResult.Text = "Successful Login"
+    '        lblLoginResult.ForeColor = Color.Green
+    '        lblLoginResult.Visible = True
+    '        loginDiv.Visible = False
+    '        btnApiLogout.Visible = True
 
-            Dim tokenCookie As New HttpCookie("JwtCookie")
-            tokenCookie.HttpOnly = True
-            'tokenCookie.Secure = True //use if HTTPS for added security. Current ApiClient page is HTTP only
-            tokenCookie("JWT") = jwtToken
-            tokenCookie.Expires = Now.AddHours(1)
-            Response.Cookies.Add(tokenCookie)
-        Else
-            lblLoginResult.Text = "Failed Login"
-            lblLoginResult.ForeColor = Color.Red
-            lblLoginResult.Visible = True
-        End If
-    End Sub
+    '        Dim tokenCookie As New HttpCookie("JwtCookie")
+    '        tokenCookie.HttpOnly = True
+    '        'tokenCookie.Secure = True //use if HTTPS for added security. Current ApiClient page is HTTP only
+    '        tokenCookie("JWT") = jwtToken
+    '        tokenCookie.Expires = Now.AddHours(1)
+    '        Response.Cookies.Add(tokenCookie)
+    '    Else
+    '        lblLoginResult.Text = "Failed Login"
+    '        lblLoginResult.ForeColor = Color.Red
+    '        lblLoginResult.Visible = True
+    '    End If
+    'End Sub
 
-    Private Sub btnApiLogout_Click(sender As Object, e As EventArgs) Handles btnApiLogout.Click
-        If (Not Request.Cookies("JwtCookie") Is Nothing) Then
-            Dim tokenCookie As HttpCookie
-            tokenCookie = New HttpCookie("JwtCookie")
-            tokenCookie.Expires = DateTime.Now.AddDays(-1D)
-            Response.Cookies.Add(tokenCookie)
-            lblLoginResult.Visible = False
-            loginDiv.Visible = True
-            btnApiLogout.Visible = False
+    'Private Sub btnApiLogout_Click(sender As Object, e As EventArgs) Handles btnApiLogout.Click
+    '    If (Not Request.Cookies("JwtCookie") Is Nothing) Then
+    '        Dim tokenCookie As HttpCookie
+    '        tokenCookie = New HttpCookie("JwtCookie")
+    '        tokenCookie.Expires = DateTime.Now.AddDays(-1D)
+    '        Response.Cookies.Add(tokenCookie)
+    '        lblLoginResult.Visible = False
+    '        loginDiv.Visible = True
+    '        btnApiLogout.Visible = False
 
-        End If
-    End Sub
+    '    End If
+    'End Sub
 
     Function getToken() As String
         Dim jwtToken As String

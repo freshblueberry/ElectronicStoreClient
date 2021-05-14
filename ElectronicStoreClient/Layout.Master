@@ -160,6 +160,8 @@
 
                                                     <li><a href="Login-Register.aspx">REGISTER </a></li>
                                                     <li><a href="CONTACT.aspx">CONTACT </a></li>
+                                                    <li><a href="ApiClient.aspx">PANEL</a></li>
+
                                                 </ul>
                                             </nav>
                                         </div>

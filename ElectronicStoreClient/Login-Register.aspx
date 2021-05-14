@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Layout.Master" CodeBehind="Login-Register.aspx.vb" Inherits="ElectronicStoreClient.Login" %>
+﻿<%@ Page Async="true" Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Layout.Master" CodeBehind="Login-Register.aspx.vb" Inherits="ElectronicStoreClient.Login" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -33,16 +33,16 @@
                                     <div class="login-form-container">
                                         <div class="login-register-form">
                                             <form action="#" method="post">
-                                                <input type="text" name="user-name" placeholder="Username">
-                                                <input type="password" name="user-password" placeholder="Password">
-                                                <div class="button-box">
-                                                    <div class="login-toggle-btn">
-                                                        <input type="checkbox">
-                                                        <label>Remember me</label>
-                                                        <a href="#">Forgot Password?</a>
-                                                    </div>
-                                                    <button type="submit">Login</button>
-                                                </div>
+        <div id="loginDiv" runat="server" class="alignCenter">
+            <label>Email:</label>
+            <input type="text" id="tbEmail" runat="server" />
+            <label>Password:</label>
+            <input type="password" id="tbPassword" runat="server" />
+            <asp:Button ID="btnApiLogin" runat="server" Text="Login" />     
+        </div>
+        <a href="Register.aspx">Register for API Access</a>
+            <asp:Label ID="lblLoginResult" runat="server" Font-Bold="true" Text="" Visible="false" CssClass="alignCenter"></asp:Label>
+            <asp:Button ID="btnApiLogout" runat="server" Text="Logout" Visible="false"/>
                                             </form>
                                         </div>
                                     </div>
@@ -51,13 +51,15 @@
                                     <div class="login-form-container">
                                         <div class="login-register-form">
                                             <form action="#" method="post">
-                                                <input type="text" name="user-name" placeholder="Username">
-                                                <input type="password" name="user-password" placeholder="Password">
-                                                <input name="user-email" placeholder="Email" type="email">
+                            <input type="text" id="txtEmail" placeholder="Email" runat="server"/>
+                            <input type="password" id="txtPassword" placeholder="Password" runat="server"/>
+                            <input type="password" id="txtConfirmPassword" placeholder="Confirm Password" runat="server"/>
                                                 <div class="button-box">
-                                                    <button type="submit">Register</button>
+                            <asp:Button ID="btnRegister" runat="server" Text="Register" />
                                                 </div>
                                             </form>
+                                                        <asp:Label ID="lblRegisterResult" runat="server" Font-Bold="true" Text="" Visible="false" CssClass="alignCenter"></asp:Label>
+
                                         </div>
                                     </div>
                                 </div>
