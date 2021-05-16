@@ -25,25 +25,27 @@ Public Class ProductDetail
             End If
         End If
 
+
     End Sub
 
-    Public Sub btnAddtoCart_Click(sender As Object, e As EventArgs)
-        Response.Redirect("Cart.aspx")
-        '*** get CartNo
-        Dim strCartNo As String
-        If HttpContext.Current.Request.Cookies("CartNo") Is Nothing Then
-            strCartNo = GetRandomCartNoUsingGUID(10)
-            Dim CookieTo As New HttpCookie("CartNo", strCartNo)
-            HttpContext.Current.Response.AppendCookie(CookieTo)
-        Else
-            Dim CookieBack As HttpCookie
-            CookieBack = HttpContext.Current.Request.Cookies("CartNo")
-            strCartNo = CookieBack.Value
+    Protected Sub gvProduct_OnItemCommand(Source As Object, e As RepeaterCommandEventArgs) Handles gvProduct.ItemCommand
+        If e.CommandName = "AddtoCart" Then
+            Dim strCartNo As String
+            If HttpContext.Current.Request.Cookies("CartNo") Is Nothing Then
+                strCartNo = GetRandomCartNoUsingGUID(10)
+                Dim CookieTo As New HttpCookie("CartNo", strCartNo)
+                HttpContext.Current.Response.AppendCookie(CookieTo)
+            Else
+                Dim CookieBack As HttpCookie
+                CookieBack = HttpContext.Current.Request.Cookies("CartNo")
+                strCartNo = CookieBack.Value
+            End If
+
+            'send request to update cart'
         End If
 
 
     End Sub
-
 
 
     Public Function GetRandomCartNoUsingGUID(ByVal length As Integer) As String

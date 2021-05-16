@@ -22,7 +22,7 @@
         <!-- Breadcrumb End-->
 
         <!-- Product Details Container -->
-        <asp:Repeater ID="gvProduct" runat="server">
+        <asp:Repeater ID="gvProduct" runat="server" >
             <ItemTemplate>
                 <div class="product-details-area pt-120 pb-115">
             <div class="container">
@@ -46,8 +46,7 @@
                         <!-- Main Content-->
                     <div class="col-lg-6 col-md-6">
                         <div class="product-details-content pro-details-content-mrg">
-                            <h2><%#: Eval("ProductName") %></h2>     <!-- Title-->
-
+                            <h2><%#: Eval("ProductName") %></h2>  <!-- Title-->
                              <!-- Review -->
                             <div class="product-ratting-review-wrap">
                                 <div class="product-ratting-digit-wrap">
@@ -80,7 +79,7 @@
                             <div class="pro-details-quality">
                                 <span>Quantity:</span>
                                 <div class="cart-plus-minus">
-                                    <input class="cart-plus-minus-box" type="text" name="qtybutton" value="1">
+                                    <input class="cart-plus-minus-box" id="tbQuantity" type="text" name="qtybutton" value="1">
                                 </div>
                             </div>
                             <br />
@@ -90,7 +89,7 @@
                             <div class="pro-details-action-wrap">
                                 <div class="pro-details-add-to-cart">
                                     <form>
-                                          <asp:Button ID ="btnAddtoCart" runat="server" Text="Add" onCLick="btnAddtoCart_Click"/>
+                                          <asp:LinkButton ID ="btnAddtoCart" CommandName="AddtoCart" runat="server" Text="Add" />
                                     </form>
                                     
                                 </div>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Layout.Master" CodeBehind="Cart.aspx.vb" Inherits="ElectronicStoreClient.Cart" %>
+﻿<%@ Page Async="true" Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Layout.Master" CodeBehind="Cart.aspx.vb" Inherits="ElectronicStoreClient.Cart" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -8,7 +8,7 @@
             <div class="breadcrumb-content text-center">
                 <ul>
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="Default.aspx">Home</a>
                     </li>
                     <li class="active">Cart Page </li>
                 </ul>
@@ -34,57 +34,44 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td class="product-thumbnail">
-                                            <a href="#">
-                                                <img src="assets/images/cart/cart-1.jpg" alt=""></a>
-                                        </td>
-                                        <td class="product-name"><a href="#">Simple Black T-Shirt</a></td>
-                                        <td class="product-price-cart"><span class="amount">$260.00</span></td>
-                                        <td class="product-quantity pro-details-quality">
-                                            <div class="cart-plus-minus">
-                                                <input class="cart-plus-minus-box" type="text" name="qtybutton" value="1">
-                                            </div>
-                                        </td>
-                                        <td class="product-subtotal">$110.00</td>
-                                        <td class="product-remove">
-                                            <a href="#"><i class="icon_close"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="product-thumbnail">
-                                            <a href="#">
-                                                <img src="assets/images/cart/cart-2.jpg" alt=""></a>
-                                        </td>
-                                        <td class="product-name"><a href="#">Norda Simple Backpack</a></td>
-                                        <td class="product-price-cart"><span class="amount">$150.00</span></td>
-                                        <td class="product-quantity pro-details-quality">
-                                            <div class="cart-plus-minus">
-                                                <input class="cart-plus-minus-box" type="text" name="qtybutton" value="1">
-                                            </div>
-                                        </td>
-                                        <td class="product-subtotal">$150.00</td>
-                                        <td class="product-remove">
-                                            <a href="#"><i class="icon_close"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="product-thumbnail">
-                                            <a href="#">
-                                                <img src="assets/images/cart/cart-1.jpg" alt=""></a>
-                                        </td>
-                                        <td class="product-name"><a href="#">Simple Black T-Shirt </a></td>
-                                        <td class="product-price-cart"><span class="amount">$170.00</span></td>
-                                        <td class="product-quantity pro-details-quality">
-                                            <div class="cart-plus-minus">
-                                                <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2">
-                                            </div>
-                                        </td>
-                                        <td class="product-subtotal">$170.00</td>
-                                        <td class="product-remove">
-                                            <a href="#"><i class="icon_close"></i></a>
-                                        </td>
-                                    </tr>
+                                     <asp:Repeater ID="gvCurrentCart" runat="server">
+                                            <ItemTemplate>
+                                                <tr>
+                                                    <td class="product-thumbnail">
+                                                        <a href="#">
+                                                            <img src="assets/images/cart/cart-1.jpg" alt=""></a>
+                                                    </td>
+                                                    <td class="product-name"><a href="#">Simple Black T-Shirt</a></td>
+                                                    <td class="product-price-cart"><span class="amount">$260.00</span></td>
+                                                    <td class="product-quantity pro-details-quality">
+                                                        <div class="cart-plus-minus">
+                                                            <input class="cart-plus-minus-box" type="text" name="qtybutton" value="1">
+                                                        </div>
+                                                    </td>
+                                                    <td class="product-subtotal">$110.00</td>
+                                                    <td class="product-remove">
+                                                        <a href="#"><i class="icon_close"></i></a>
+                                                    </td>
+                                                </tr>
+                                            </ItemTemplate>
+                                    </asp:Repeater>
+<tr>
+<td class="product-thumbnail">
+<a href="#">
+<img src="assets/images/cart/cart-1.jpg" alt=""></a>
+</td>
+<td class="product-name"><a href="#">Default Black T-Shirt</a></td>
+<td class="product-price-cart"><span class="amount">$260.00</span></td>
+<td class="product-quantity pro-details-quality">
+<div class="cart-plus-minus">
+<input class="cart-plus-minus-box" type="text" name="qtybutton" value="1">
+</div>
+</td>
+<td class="product-subtotal">$110.00</td>
+<td class="product-remove">
+<a href="#"><i class="icon_close"></i></a>
+</td>
+</tr>
                                 </tbody>
                             </table>
                         </div>
