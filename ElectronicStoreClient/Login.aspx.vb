@@ -43,4 +43,16 @@ Public Class Login
         End If
     End Sub
 
+
+    Function getToken() As String   'This will be important for getting/editing products and carts'
+        Dim jwtToken As String
+        If (Request.Cookies("JwtCookie") IsNot Nothing) Then
+            If (Request.Cookies("JwtCookie")("JWT") IsNot Nothing) Then
+                jwtToken = Request.Cookies("JwtCookie")("JWT")
+                Return jwtToken
+            End If
+        End If
+        Return Nothing
+    End Function
+
 End Class

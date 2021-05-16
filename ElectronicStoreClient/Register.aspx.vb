@@ -22,7 +22,7 @@ Public Class Register
                 Dim myJson As String
                 myJson = ("{'email': '" & txtEmail.Value & "', 'password': '" & txtPassword.Value & "', 'RegistrationCode': 'ECOMMERCE'}")
 
-                Dim uri As String = "https://localhost:44338/account/register"
+                Dim uri As String = "http://localhost:44338/account/register"
                 Dim task = Await httpClient.PostAsync(uri, New StringContent(myJson, Encoding.UTF8, "application/json"))
                 Dim jwtToken As String
 

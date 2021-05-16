@@ -48,7 +48,7 @@
                                             <asp:Button ID="btnApiLogin" runat="server" Text="Login" />     
                                         </div>
                                         <a href="Register.aspx">Register for API Access</a>
-                                            <asp:Label ID="lblLoginResult" runat="server" Font-Bold="true" Text="" Visible="false" CssClass="alignCenter"></asp:Label>
+                                            <asp:Label ID="lblLoginResult" runat="server" Font-Bold="true" Text="" Visible="true" CssClass="alignCenter"></asp:Label>
                                             <asp:Button ID="btnApiLogout" runat="server" Text="Logout" Visible="false"/>
 
                                     </div>
