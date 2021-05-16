@@ -7,7 +7,7 @@ Public Class Site1
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'Defines which elements are visable when logged in or not'
 
-        If getToken() <> Nothing Then
+        If getToken() Is Nothing Then
             userIsLoggedOut()
         End If
 

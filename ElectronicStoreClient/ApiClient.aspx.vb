@@ -11,6 +11,17 @@ Partial Class ApiClient
     Dim httpClient As New HttpClient
     Dim strCartID As String
 
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+        'Returns user back to home page if not logged in'
+        If getToken() Is Nothing Then
+            Response.Redirect("/Default.aspx")
+        End If
+
+
+    End Sub
+
+
     Private Async Sub btnAllProducts_ClickAsync(sender As Object, e As EventArgs) Handles btnAllProducts.Click
         Dim uri As String = "http://localhost:44338/api/product"
         Dim task = Await httpClient.GetAsync(uri)
