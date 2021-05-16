@@ -72,7 +72,6 @@
                              <!-- Price -->
                             <div class="pro-details-price"> 
                                 <span class="new-price">$ <%#: Eval("Price") %></span>
-                                <span class="old-price">$95.72</span>
                             </div>
                             <br />
                             <!-- Price End -->
@@ -110,7 +109,7 @@
                     <div class="col-lg-12">
                         <div class="dec-review-topbar nav mb-45">
                             <a class="active" data-toggle="tab" href="#des-details1">Description</a>
-                            <a data-toggle="tab" href="#des-details4">Reviews and Ratting </a>
+                            <a data-toggle="tab" href="#des-details4">Reviews and Rating </a>
                         </div>
                         <div class="tab-content dec-review-bottom">
                             <!-- Item Description -->

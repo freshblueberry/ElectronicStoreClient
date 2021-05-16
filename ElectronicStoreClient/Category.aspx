@@ -9,7 +9,7 @@
                 <div class="breadcrumb-content text-center">
                     <ul>
                         <li>
-                            <a href="index.html">Shop</a>
+                            <a href="Default.aspx">Shop</a>
                         </li>
                         <li class="active">
                             <asp:Label ID="lblMainCategoryName1" runat="server" Text=""></asp:Label></li>
@@ -54,10 +54,6 @@
                                 <div id="shop-1" class="tab-pane active">
 
                                     <div class="row">
-                                        <%--			                        <asp:SqlDataSource ID="SqlDSProductList" ConnectionString="<%$ ConnectionStrings:ConnectionStringOnlineStore %>" SelectCommand="" runat="server"></asp:SqlDataSource>
-			                        <asp:Repeater ID="rpProductList" runat="server" DataSourceID="SqlDSProductList">
-				                        <ItemTemplate>--%>
-
 
                                         <!--Added by Clifford (Begin)-->
                                         <asp:Repeater ID="gvAllProducts" runat="server">
@@ -117,86 +113,6 @@
                                         <!--Added by Clifford (End)-->
 
 
-
-                                        <!--Note: If this layout is good, then remove or comment out the old HTML. -CC-->
-                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-                                            <div class="single-product-wrap mb-35">
-                                                <div class="product-img product-img-zoom mb-15">
-                                                    <%--                                                    <a href="ProductDetail.aspx?ProductID=<%# Eval("ProductID")%>">
-                                                        <img img src="StoreAssets/images/<%# Trim(Eval("ProductNO"))%>.jpg" />
-                                                    </a>--%>
-                                                </div>
-                                                <div class="product-content-wrap-2 text-center">
-                                                    <h3>
-                                                        <%--                                                        <a href="ProductDetail.aspx?ProductID=<%# Eval("ProductID")%>"><%# Trim(Eval("ProductNo"))%>
-                                                        <br />
-                                                        <%# Trim(Eval("ProductName"))%>
-                                                        </a>--%>
-                                                    </h3>
-                                                    <div class="product-price-2">
-                                                        <%--                                                        <span>$<%# GetWholesalePrice(Trim(Eval("UnitPrice"))) %></span>--%>
-                                                    </div>
-                                                </div>
-                                                <div class="product-content-wrap-2 product-content-position text-center">
-                                                    <h3>
-                                                        <%--                                                          <a href="ProductDetail.aspx?ProductID=<%# Eval("ProductID")%>">
-                                                        <%# Trim(Eval("ProductName"))%>  --%>
-                                                        </a>
-                                                    </h3>
-                                                    <div class="product-price-2">
-                                                        <%--                                                        <span>$<%# GetWholesalePrice(Trim(Eval("UnitPrice"))) %></span>--%>
-                                                    </div>
-                                                    <div class="pro-add-to-cart">
-                                                        <button title="Add to Cart">Add To Cart</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-
-
-                                        <%--                                        </ItemTemplate>
-			                            </asp:Repeater>--%>
-                                    </div>
-                                </div>
-                                <div id="shop-2" class="tab-pane">
-                                    <div class="shop-list-wrap mb-30">
-                                        <%--                                    <asp:SqlDataSource ID="SqlDataSource1" ConnectionString="<%$ ConnectionStrings:ConnectionStringOnlineStore %>" SelectCommand="" runat="server"></asp:SqlDataSource>
-			                        <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDSProductList">
-				                        <ItemTemplate>--%>
-                                        <div class="row">
-                                            <div class="col-xl-4 col-lg-5 col-md-6 col-sm-6">
-                                                <div class="product-list-img">
-                                                    <a href="ProductDetail.aspx?ProductID=<%# Eval("ProductID")%>">
-                                                        <%--                                                        <asp:Image ID="imgProduct" runat="server" />--%>
-                                                    </a>
-                                                    <div class="product-list-quickview">
-                                                        <button title="Quick View" data-toggle="modal" data-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-xl-8 col-lg-7 col-md-6 col-sm-6">
-                                                <div class="shop-list-content">
-                                                    <h3>
-                                                        <%--                                                        <a href="ProductDetail.aspx?ProductID=<%# Eval("ProductID")%>"><%# Trim(Eval("ProductNo"))%>
-                                                        <br />
-                                                        <%# Trim(Eval("ProductName"))%>
-                                                        </a>--%>
-                                                    </h3>
-                                                    <div class="product-price-1">
-                                                        <%--                                                        <span>$<%# GetWholesalePrice(Trim(Eval("UnitPrice"))) %></span>--%>
-                                                    </div>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipic it, sed do eiusmod tempor labor incididunt ut et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <%--                                        </ItemTemplate>
-			                            </asp:Repeater>--%>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="pro-pagination-style text-center mt-10">
                                 <ul>
                                     <li><a class="prev" href="#"><i class="icon-arrow-left"></i></a></li>
@@ -240,6 +156,26 @@
                 </div>
             </div>
         </div>
+                    <div class="col-lg-3">
+                        <div class="sidebar-wrapper sidebar-wrapper-mrg-right">
+                            <div class="sidebar-widget shop-sidebar-border mb-35 pt-40">
+                                <h4 class="sidebar-widget-title">Categories </h4>
+                                <div class="shop-catigory">
+                                    <ul> <!-- Category list still working -->
+                                        <li><a href="Category.aspx">CPU</a></li>
+                                        <li><a href="Category.aspx">Computer Case</a></li>
+                                        <li><a href="Category.aspx">SSD </a></li>
+                                        <li><a href="Category.aspx">Monitors</a></li>
+                                        <li><a href="Category.aspx">Power Supplies</a></li>
+                                        <li><a href="Category.aspx">Motherboards</a></li>
+                                        <li><a href="Category.aspx">AIO Coolers</a></li>
+                                        <li><a href="Category.aspx">RAM</a></li>
+                                        <li><a href="Category.aspx">Video Card</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
@@ -365,4 +301,6 @@
         </div>
         <!-- Modal end -->
     </div>
+                </div>
+            </div>
 </asp:Content>
