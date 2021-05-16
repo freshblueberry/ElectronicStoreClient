@@ -74,10 +74,10 @@
                                         <div class="header-action header-action-flex">
                                             <div class="same-style-2 same-style-2-white same-style-2-font-inc">
 
-                                                <asp:HyperLink ID="hlLogin" runat="server" NavigateUrl="Login-Register.aspx">  <!--Edited by Cliff -->
+                                                <asp:HyperLink ID="hlLogin" runat="server" NavigateUrl="Register.aspx" Visible="false">  <!--Edited by Cliff; Default on Register-->
                                             <i class="icon-user"></i>
                                                 </asp:HyperLink>
-                                                <asp:HyperLink ID="hlLogout" runat="server" NavigateUrl="Login-Register.aspx" Visible="false"> <!--Edited by Cliff; note: Login-Logout methods should be placed in this page. im guessing -->
+                                                <asp:HyperLink ID="hlLogout" runat="server" NavigateUrl="Login.aspx"> <!--Edited by Cliff; Login-->
                                             <i class="icon-user"></i>
                                                 </asp:HyperLink>
                                                 <span>
@@ -158,7 +158,7 @@
                                                         </ul>
                                                     </li>
 
-                                                    <li><a href="Login-Register.aspx">REGISTER </a></li>
+                                                    <li><a href="Register.aspx">REGISTER </a></li>
                                                     <li><a href="CONTACT.aspx">CONTACT </a></li>
                                                     <li><a href="ApiClient.aspx">PANEL</a></li>
 
@@ -183,7 +183,7 @@
                                 <div class="col-7">
                                     <div class="header-action header-action-flex">
                                         <div class="same-style-2 same-style-2-white same-style-2-font-inc">
-                                            <a href="login-register.aspx"><i class="icon-user"></i></a>
+                                            <a href="login.aspx"><i class="icon-user"></i></a>
                                         </div>
                                         <div class="same-style-2 same-style-2-white same-style-2-font-inc">
                                             <a href="wishlist.html"><i class="icon-heart"></i><span class="pro-count black">03</span></a>
@@ -249,7 +249,7 @@
                                                         <li><a href="product-details-affiliate.html">affiliate style</a></li>
                                                         <li><a href="product-details-group.html">group style</a></li>
                                                         <li><a href="product-details-fixed-img.html">fixed image style </a></li>
-                                                    </ul>
+                                                    </ul>z
                                                 </li>
                                             </ul>
                                         </li>
@@ -288,6 +288,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                     <!-- This is where the content is shown (login, category, product detail, etc.) -->

@@ -143,7 +143,8 @@
     <Content Include="Category.aspx" />
     <Content Include="CONTACT.aspx" />
     <Content Include="Default.aspx" />
-    <Content Include="Login-Register.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="Login.aspx" />
     <Content Include="MyAccount.aspx" />
     <Content Include="ProductDetail.aspx" />
     <Content Include="Web.config" />
@@ -184,11 +185,18 @@
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="Login-Register.aspx.designer.vb">
-      <DependentUpon>Login-Register.aspx</DependentUpon>
+    <Compile Include="Register.aspx.designer.vb">
+      <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Login-Register.aspx.vb">
-      <DependentUpon>Login-Register.aspx</DependentUpon>
+    <Compile Include="Register.aspx.vb">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
