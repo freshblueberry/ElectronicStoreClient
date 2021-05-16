@@ -20,7 +20,7 @@ Public Class Login
         Dim myJson As String
         myJson = ("{'email': '" & tbEmail.Value & "', 'password': '" & tbPassword.Value & "'}")
 
-        Dim uri As String = "https://localhost:44338/account/login"
+        Dim uri As String = "https://localhost:44338/account/login" 'Needs to changed to http when done; currently testing'
         Dim task = Await httpClient.PostAsync(uri, New StringContent(myJson, Encoding.UTF8, "application/json"))
         Dim jwtToken As String
         If task.IsSuccessStatusCode Then
@@ -48,7 +48,7 @@ Public Class Login
         If ValidatePassword(txtPassword.Value) = True Then
             If txtPassword.Value = txtConfirmPassword.Value Then
                 Dim myJson As String
-                myJson = ("{'email': '" & txtEmail.Value & "', 'password': '" & txtPassword.Value & "}")
+                myJson = ("{'email': '" & txtEmail.Value & "', 'password': '" & txtPassword.Value & "', 'RegistrationCode': 'ECOMMERCE'}")
 
                 Dim uri As String = "https://localhost:44338/account/register"
                 Dim task = Await httpClient.PostAsync(uri, New StringContent(myJson, Encoding.UTF8, "application/json"))

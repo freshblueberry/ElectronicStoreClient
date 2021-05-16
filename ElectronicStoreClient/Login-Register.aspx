@@ -31,8 +31,8 @@
                             <div class="tab-content">
                                 <div id="lg1" class="tab-pane active">
                                     <div class="login-form-container">
-                                        <div class="login-register-form">
-                                            <form action="#" method="post">
+                                        <div class="login-register-form">  <!--LOGIN FOM-->
+
         <div id="loginDiv" runat="server" class="alignCenter">
             <label>Email:</label>
             <input type="text" id="tbEmail" runat="server" />
@@ -43,23 +43,28 @@
         <a href="Register.aspx">Register for API Access</a>
             <asp:Label ID="lblLoginResult" runat="server" Font-Bold="true" Text="" Visible="false" CssClass="alignCenter"></asp:Label>
             <asp:Button ID="btnApiLogout" runat="server" Text="Logout" Visible="false"/>
-                                            </form>
+
                                         </div>
                                     </div>
                                 </div>
                                 <div id="lg2" class="tab-pane">
                                     <div class="login-form-container">
                                         <div class="login-register-form">
-                                            <form action="#" method="post">
-                            <input type="text" id="txtEmail" placeholder="Email" runat="server"/>
-                            <input type="password" id="txtPassword" placeholder="Password" runat="server"/>
-                            <input type="password" id="txtConfirmPassword" placeholder="Confirm Password" runat="server"/>
-                                                <div class="button-box">
-                            <asp:Button ID="btnRegister" runat="server" Text="Register" />
-                                                </div>
-                                            </form>
-                                                        <asp:Label ID="lblRegisterResult" runat="server" Font-Bold="true" Text="" Visible="false" CssClass="alignCenter"></asp:Label>
+                                            <div style="margin:8px;">
+                                                <input type="text" id="txtEmail" placeholder="Email" runat="server"/>
+                                            </div>
+                                            <div  style="margin:8px;">
+                                                <input type="password" id="txtPassword" placeholder="Password" runat="server"/>
+                                            </div>
+                                            <div  style="margin:8px;">
+                                                <input type="password" id="txtConfirmPassword" placeholder="Confirm Password" runat="server"/>
+                                            </div>
 
+                                            <div class="button-box">
+                                                <asp:Button ID="btnRegister" runat="server" Text="Register" />
+                                            </div>
+
+                                            <asp:Label ID="lblRegisterResult" runat="server" Font-Bold="true" Text="" Visible="false" CssClass="alignCenter"></asp:Label>
                                         </div>
                                     </div>
                                 </div>
