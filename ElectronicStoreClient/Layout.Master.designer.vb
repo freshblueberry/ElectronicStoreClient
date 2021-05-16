@@ -59,31 +59,49 @@ Partial Public Class Site1
     Protected WithEvents btnSearch As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''hlLogin control.
+    '''hlToLogin control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents hlLogin As Global.System.Web.UI.WebControls.HyperLink
+    Protected WithEvents hlToLogin As Global.System.Web.UI.WebControls.HyperLink
 
     '''<summary>
-    '''hlLogout control.
+    '''hlToMyAccount control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents hlLogout As Global.System.Web.UI.WebControls.HyperLink
+    Protected WithEvents hlToMyAccount As Global.System.Web.UI.WebControls.HyperLink
 
     '''<summary>
-    '''lblCustomer control.
+    '''btnApiLogout control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblCustomer As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents btnApiLogout As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''lblRegister control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblRegister As Global.System.Web.UI.WebControls.HyperLink
+
+    '''<summary>
+    '''lblPanel control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblPanel As Global.System.Web.UI.WebControls.HyperLink
 
     '''<summary>
     '''ContentPlaceHolder1 control.

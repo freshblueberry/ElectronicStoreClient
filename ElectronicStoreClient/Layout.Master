@@ -73,21 +73,24 @@
                                     <div class="col-xl-3 col-lg-3">
                                         <div class="header-action header-action-flex">
                                             <div class="same-style-2 same-style-2-white same-style-2-font-inc">
+                                                <div style="display:grid"> 
 
-                                                <asp:HyperLink ID="hlLogin" runat="server" NavigateUrl="Register.aspx" Visible="false">  <!--Edited by Cliff; Default on Register-->
-                                            <i class="icon-user"></i>
-                                                </asp:HyperLink>
-                                                <asp:HyperLink ID="hlLogout" runat="server" NavigateUrl="Login.aspx"> <!--Edited by Cliff; Login-->
-                                            <i class="icon-user"></i>
-                                                </asp:HyperLink>
-                                                <span>
-                                                    <asp:Label ID="lblCustomer" runat="server" NavigateUrl="MyAccount.aspx" Text="" Visible="false"></asp:Label></span>
-                                            </div>
+                                                    <asp:HyperLink ID="hlToLogin" runat="server" NavigateUrl="Login.aspx">  <!--Edited by Cliff; Default on Register-->
+                                                        <i class="icon-user"></i>
+                                                    </asp:HyperLink>
+                                                    <asp:HyperLink ID="hlToMyAccount" runat="server" NavigateUrl="MyAccount.aspx" Visible="false"> <!--Edited by Cliff; Login-->
+                                                        <i class="icon-user"></i>
+                                                    </asp:HyperLink>
+                                                </div>
+                                            </div> 
 
                                             <div class="same-style-2 same-style-2-white same-style-2-font-inc header-cart">
                                                 <a class="cart" href="Cart.aspx">
                                                     <i class="icon-basket-loaded"></i>
                                                 </a>
+                                            </div>
+                                            <div>
+                                                <asp:Button ID="btnApiLogout" runat="server" text="Logout" Visible="false"/>
                                             </div>
                                         </div>
                                     </div>
@@ -158,9 +161,13 @@
                                                         </ul>
                                                     </li>
 
-                                                    <li><a href="Register.aspx">REGISTER </a></li>
+                                                    <li>
+                                                        <asp:HyperLink ID ="lblRegister" runat="server" NavigateUrl="Register.aspx" text="REGISTER"></asp:HyperLink>
+                                                    </li>
                                                     <li><a href="CONTACT.aspx">CONTACT </a></li>
-                                                    <li><a href="ApiClient.aspx">PANEL</a></li>
+                                                    <li>
+                                                         <asp:HyperLink ID="lblPanel" runat="server" NavigateUrl="ApiClient.aspx" text="" Visable="false"></asp:HyperLink>
+                                                    </li>
 
                                                 </ul>
                                             </nav>

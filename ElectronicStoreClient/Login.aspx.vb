@@ -43,6 +43,19 @@ Public Class Login
         End If
     End Sub
 
+    Private Sub btnApiLogout_Click(sender As Object, e As EventArgs) Handles btnApiLogout.Click
+        If (Not Request.Cookies("JwtCookie") Is Nothing) Then
+            Dim tokenCookie As HttpCookie
+            tokenCookie = New HttpCookie("JwtCookie")
+            tokenCookie.Expires = DateTime.Now.AddDays(-1D)
+            Response.Cookies.Add(tokenCookie)
+            lblLoginResult.Visible = False
+            loginDiv.Visible = True
+            btnApiLogout.Visible = False
+
+        End If
+    End Sub
+
 
     Function getToken() As String   'This will be important for getting/editing products and carts'
         Dim jwtToken As String
