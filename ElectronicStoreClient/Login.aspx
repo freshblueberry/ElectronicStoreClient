@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Layout.Master" CodeBehind="Login.aspx.vb" Inherits="ElectronicStoreClient.Login1" %>
+﻿<%@ Page Async="true" Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Layout.Master" CodeBehind="Login.aspx.vb" Inherits="ElectronicStoreClient.Login" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -9,9 +9,9 @@
             <div class="breadcrumb-content text-center">
                 <ul>
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="default.aspx">Home</a>
                     </li>
-                    <li class="active">login - register </li>
+                    <li class="active">register </li>
                 </ul>
             </div>
         </div>
@@ -29,13 +29,22 @@
                         <div class="tab-content">
                             <div id="lg1" class="tab-pane active">
                                 <div class="login-form-container">
-                                    <div class="login-register-form">  <!--LOGIN FOM-->
+                                    <div class="login-register-form">  <!--LOGIN INPUTS; no form element-->
 
                                         <div id="loginDiv" runat="server" class="alignCenter">
-                                            <label>Email:</label>
-                                            <input type="text" id="tbEmail" runat="server" />
-                                            <label>Password:</label>
-                                            <input type="password" id="tbPassword" runat="server" />
+                                            
+                                            <div style="margin-bottom:16px;">
+                                                <label>Email:</label>
+                                                <input type="text" id="tbEmail" runat="server" />
+                                            </div>
+                                            
+                                            
+                                            <div style="margin-bottom:16px;"> 
+                                                <label>Password:</label>
+                                                <input type="password" id="tbPassword" runat="server" />
+
+                                            </div>
+                                            
                                             <asp:Button ID="btnApiLogin" runat="server" Text="Login" />     
                                         </div>
                                         <a href="Register.aspx">Register for API Access</a>
