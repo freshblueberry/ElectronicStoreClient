@@ -11,7 +11,7 @@
                     <li>
                         <a href="default.aspx">Home</a>
                     </li>
-                    <li class="active">register </li>
+                    <li class="active">Login </li>
                 </ul>
             </div>
         </div>
